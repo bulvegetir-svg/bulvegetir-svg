@@ -1,0 +1,25 @@
+/* version: 0.1.1 – 2026-02-04 */
+<!DOCTYPE html>
+<html lang="tr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>Teşekkürler – Mağazamız</title>
+  <meta name="description" content="Ödemeniz alındı, teşekkür ederiz!">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/' | url }}style.min.css">
+</head>
+<body class="thankyou-page">
+
+  {% include "header.njk" %}
+
+  <main class="site-main">
+    <h1>Teşekkürler!</h1>
+    <p>Siparişiniz başarıyla tamamlandı. Size bir onay e‑postası gönderildi.</p>
+    <a href="/" class="btn btn-primary">Ana Sayfaya Dön</a>
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script src="{{ '/' | url }}script.min.js" defer></script>
+</body>
+</html>

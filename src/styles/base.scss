@@ -1,0 +1,16 @@
+/* version: 0.1.1 – 2026-02-04 */
+@use 'variables' as *;
+@use 'reset';
+
+body {
+  font-family: $font-primary;
+  background-color: $color-bg;
+  color: $color-text;
+  line-height: 1.5;
+}
+a {
+  color: $color-primary;
+  text-decoration: none;
+}
+// Scss Document
+

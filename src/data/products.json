@@ -1,0 +1,27 @@
+/* version: 0.1.1 – 2026-02-04 */
+[
+  {
+    "id": "p001",
+    "slug": "gunes-gokkusagi-kemer",
+    "name": "Güneş Gökkuşağı Kemer",
+    "shortDescription": "Renkli, ayarlanabilir deri kemer",
+    "description": "Yüksek kalite deri, renk geçişli tasarım. Şık ve dayanıklı.",
+    "price": 129.9,
+    "currency": "TRY",
+    "sku": "KEM-001",
+    "image": "gunes-kemer",
+    "stripePriceId": "price_1LxyzABcDEFGHIjkLMNOPQRS"
+  },
+  {
+    "id": "p002",
+    "slug": "minimalist-canta",
+    "name": "Minimalist Deri Çanta",
+    "shortDescription": "İnce deri, geniş iç hacim",
+    "description": "Modern tasarım, günlük kullanım için ideal.",
+    "price": 349.0,
+    "currency": "TRY",
+    "sku": "CANT-002",
+    "image": "minimalist-canta",
+    "stripePriceId": "price_1LxyzABcDEFGHIjkSTUVWX12"
+  }
+]

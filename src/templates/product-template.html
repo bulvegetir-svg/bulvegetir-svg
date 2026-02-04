@@ -1,0 +1,85 @@
+/* version: 0.1.1 – 2026-02-04 */
+<!DOCTYPE html>
+<html lang="tr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>{{name}} – Mağazamız</title>
+  <meta name="description" content="{{shortDescription}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{name}}">
+  <meta property="og:description" content="{{shortDescription}}">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="{{ '/' | url }}product-{{slug}}.html">
+  <meta property="og:image" content="{{ '/' | url }}assets/img/{{image}}.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured Data – Product -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org/",
+    "@type":"Product",
+    "name":"{{name}}",
+    "image":["{{ '/' | url }}assets/img/{{image}}.webp"],
+    "description":"{{shortDescription}}",
+    "sku":"{{sku}}",
+    "offers":{
+      "@type":"Offer",
+      "priceCurrency":"{{currency}}",
+      "price":"{{price}}",
+      "availability":"https://schema.org/InStock",
+      "url":"{{ '/' | url }}product-{{slug}}.html"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="{{ '/' | url }}style.min.css">
+</head>
+<body class="product-page">
+
+  {% include "header.njk" %}
+
+  <main class="site-main">
+    <section class="product-hero">
+      <picture class="product-img">
+        <source srcset="{{ '/' | url }}assets/img/{{image}}.webp" type="image/webp">
+        <img src="{{ '/' | url }}assets/img/{{image}}.jpg"
+             alt="{{name}} – {{shortDescription}}"
+             loading="lazy">
+      </picture>
+
+      <div class="product-info">
+        <h1 class="product-title">{{name}}</h1>
+        <p class="product-price">{{price | currency}}</p>
+
+        <p class="product-description">{{description}}</p>
+
+        <button class="btn btn-primary add-to-cart"
+                data-id="{{id}}"
+                data-name="{{name}}"
+                data-price="{{price}}"
+                data-img="{{image}}">
+          Sepete Ekle
+        </button>
+
+        <button class="btn btn-outline checkout"
+                data-id="{{id}}">
+          Hemen Satın Al (Stripe)
+        </button>
+      </div>
+    </section>
+
+    <section class="product-related">
+      <h2>Benzer Ürünler</h2>
+      <div class="product-grid" id="related-products"></div>
+    </section>
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script src="{{ '/' | url }}script.min.js" defer></script>
+</body>
+</html>
