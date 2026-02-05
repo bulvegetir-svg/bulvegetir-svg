@@ -1,7 +1,10 @@
-/* version: 0.1.1 – 2026-02-04 */
-module.exports = {
+/* postcss.config.js – 0.1.1 – 2026-02-04 */
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+
+export default {
   plugins: [
-    require('autoprefixer')(),
-    require('cssnano')({ preset: 'default' })
+    autoprefixer(),
+    cssnano({ preset: 'default' })
   ]
 };

@@ -1,0 +1,18 @@
+---
+layout: base.njk
+title: Ana Sayfa
+---
+
+<h1>Bulvegetir SVG</h1>
+<p>Hoş geldiniz! Ürünleri aşağıda görebilirsiniz.</p>
+
+<ul>
+  {% for product in collections.products %}
+    <li>
+      <strong>{{ product.name }}</strong> -
+      {{ product.price | currency }}
+    </li>
+  {% endfor %}
+</ul>
+
+<a href="/cart.html" class="button">Sepete Git</a>

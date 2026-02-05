@@ -1,16 +1,8 @@
-/* version: 0.1.1 – 2026-02-04 */
-@use 'variables' as *;
-@use 'reset';
+/* src/styles/base.scss */
+@use "index";
 
 body {
-  font-family: $font-primary;
-  background-color: $color-bg;
-  color: $color-text;
-  line-height: 1.5;
+  font-family: index.$font-stack;
+  background-color: index.$primary-color;
+  color: #333;
 }
-a {
-  color: $color-primary;
-  text-decoration: none;
-}
-// Scss Document
-
