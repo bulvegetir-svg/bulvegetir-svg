@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf dist",
-    "styles": "sass src/styles/style.scss dist/style.css --no-source-map && postcss dist/style.css -o dist/style.min.css",
+    "styles": "sass src/styles/style.scss dist/style.css --no-source-map && npx postcss dist/style.css -o dist/style.min.css",
     "scripts": "rollup -c",
     "html": "eleventy --config=.eleventy.js",
     "build": "npm-run-all clean styles scripts html",
@@ -16,6 +16,11 @@
     "rimraf": "^5.0.5",
     "sass": "^1.77.0",
     "postcss": "^8.4.31",
-    "rollup": "^4.12.0"
+    "postcss-cli": "^10.1.0",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^6.0.1",
+    "rollup": "^4.12.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4"
   }
 }
