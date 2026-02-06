@@ -1,5 +1,15 @@
-# version: 0.1.1 – 2026-02-04
+# version: 0.1.2 – 2026-02-05
 node_modules/
-dist/
 *.log
 .env
+
+# IDE / Editor ayarları
+.vscode/
+.idea/
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/

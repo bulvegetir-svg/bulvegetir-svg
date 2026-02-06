@@ -1,18 +1,20 @@
----
-layout: base.njk
-title: Ana Sayfa
----
+{% extends "base.njk" %}
 
-<h1>Bulvegetir SVG</h1>
-<p>Hoş geldiniz! Ürünleri aşağıda görebilirsiniz.</p>
+{% block content %}
+<section class="hero">
+  <h1>Bul Getir’e Hoş Geldiniz 🚀</h1>
+  <p>Tek CSS + Tek JS ile SEO uyumlu, aktif e‑ticaret projesi.</p>
+  <a href="/cart.html" class="btn">Sepete Git</a>
+</section>
 
-<ul>
-  {% for product in collections.products %}
-    <li>
-      <strong>{{ product.name }}</strong> -
-      {{ product.price | currency }}
-    </li>
-  {% endfor %}
-</ul>
-
-<a href="/cart.html" class="button">Sepete Git</a>
+<section class="features">
+  <h2>Öne Çıkan Özellikler</h2>
+  <ul>
+    <li>✅ Tek CSS dosyası (style.min.css)</li>
+    <li>✅ Tek JS dosyası (script.min.js)</li>
+    <li>✅ Stripe Checkout entegrasyonu</li>
+    <li>✅ Plausible analytics takibi</li>
+    <li>✅ SEO uyumlu meta ve JSON‑LD şemalar</li>
+  </ul>
+</section>
+{% endblock %}

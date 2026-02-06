@@ -1,0 +1,54 @@
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #1080d0;
+  color: #fff;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    background: #fff;
+    color: #1080d0;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      background: #f0f0f0;
+    }
+  }
+}
+
+.features {
+  padding: 2rem;
+  background: #fff;
+  color: #333;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+
+    li {
+      padding: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+  }
+}
+// Scss Document
+

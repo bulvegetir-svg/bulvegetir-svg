@@ -1,0 +1,30 @@
+.footer {
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+
+  a {
+    color: #1080d0;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__social {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    li {
+      display: inline;
+    }
+  }
+}
+// Scss Document
+

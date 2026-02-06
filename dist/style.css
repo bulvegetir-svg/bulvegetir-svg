@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/* ===========================
+   GENEL STİLLER
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Linkler */
+a {
+  color: #1080d0;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   NAVBAR
+   =========================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1080d0;
+  padding: 1rem;
+  color: #fff;
+  position: relative;
+}
+.navbar__logo a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.navbar__toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  display: block;
+}
+.navbar__links {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  background: #1a1a1a;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  z-index: 10;
+}
+.navbar__links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  display: block;
+}
+.navbar.active .navbar__links {
+  display: flex;
+}
+
+.dropdown__toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+.dropdown__menu, .dropdown__submenu {
+  display: none;
+  list-style: none;
+  padding-left: 1rem;
+}
+.dropdown__menu a, .dropdown__submenu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  display: block;
+}
+.dropdown.active > .dropdown__menu {
+  display: block;
+}
+.dropdown__item.active > .dropdown__submenu {
+  display: block;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.footer {
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+.footer a {
+  color: #1080d0;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer__social {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.footer__social li {
+  display: inline;
+}
