@@ -2,8 +2,8 @@
    layout.njk – Master (üst) şablon
    • Eleventy + Nunjucks şablon dili
    • Proje kök klasörü: src/_includes
-   • Bu dosya, tüm sayfalarda ortak HTML çerçevesini (doctype, head, header,
-     footer ve content block) sunar.
+   • Bu dosya, tüm sayfalarda ortak HTML çerçevesini (doctype, head,
+     header, footer ve content block) sunar.
    • Sayfa başlığı, değişken {{ title }} üzerinden üst şablona geçirilir.
    • CSS dosyası (style.min.css) ve JavaScript (script.min.js) otomatik
      olarak eklenir.
@@ -11,15 +11,15 @@
 <!DOCTYPE html>
 <html lang="tr">
   <head>
-    {# Meta etiketler – SEO ve tarayıcı uyumluluğu için gerekli #}
+    <!-- SEO ve tarayıcı uyumluluğu -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title | default("Bulvegetir – Ana Sayfa") }}</title>
 
-    {# Açıklama meta etiketi – isteğe bağlı, burada örnek bir değer #}
+    <!-- Açıklama meta etiketi -->
     <meta name="description"
           content="Bulvegetir – Tek CSS ve tek JS ile SEO‑uyumlu, aktif e‑ticaret">
-    {# Open Graph etiketleri – sosyal medyada link paylaşıldığında görünür #}
+    <!-- Open Graph – sosyal medya ön izlemeleri -->
     <meta property="og:title" content="{{ title | default('Bulvegetir') }}">
     <meta property="og:description"
           content="Bulvegetir – Tek CSS ve tek JS ile SEO‑uyumlu, aktif e‑ticaret">
@@ -27,23 +27,19 @@
     <meta property="og:url" content="{{ site.url | default('https://bulvegetir-svg.vercel.app') }}">
     <meta property="og:image" content="{{ site.url }}/static/og-image.png">
 
-    {# Stil dosyası – dağıtımda minifikasyonlu sürüm dist/style.min.css  #}
+    <!-- Stil dosyası -->
     <link rel="stylesheet" href="/style.min.css">
   </head>
 
   <body class="{{ pageClass | default('site-body') }}">
-    {# Header – src/_includes/header.njk dosyasını ekler #}
     {% include "header.njk" %}
 
-    {# İçerik bloğu – Her sayfa kendi içeriğini burada yerleştirir #}
     <main class="site-main">
       {% block content %}{% endblock %}
     </main>
 
-    {# Footer – src/_includes/footer.njk dosyasını ekler #}
     {% include "footer.njk" %}
 
-    {# JavaScript – Üretim ortamında dağıtılan sıkıştırılmış script #}
     <script src="/script.min.js" defer></script>
   </body>
 </html>
