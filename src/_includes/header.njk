@@ -1,7 +1,19 @@
-<header>
-  <h1>{{ title }}</h1>
-  <nav>
-    <a href="/">Ana Sayfa</a>
-    <a href="/pages/thankyou/">Teşekkür</a>
+{# header.njk – Site genel menüsü #}
+<header class="site-header">
+  <div class="logo">
+    <!-- Başlık (title) değişkeni, <title> etiketiyle aynı değeri alır -->
+    <h1><a href="/">{{ title | default('Bulvegetir') }}</a></h1>
+  </div>
+
+  <!-- Navigasyon menüsü -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="/" class="nav-link">Ana Sayfa</a></li>
+      <li><a href="/about/" class="nav-link">Hakkımızda</a></li>
+      <li><a href="/contact/" class="nav-link">İletişim</a></li>
+      <li><a href="/cart/" class="nav-link">Sepet</a></li>
+      <li><a href="/test/" class="nav-link">Test Sayfası</a></li>
+      <li><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
+    </ul>
   </nav>
 </header>
