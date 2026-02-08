@@ -1,13 +1,12 @@
 {# header.njk – Site genel menüsü #}
 <header class="site-header">
   <div class="logo">
-    <!-- Başlık (title) değişkeni, front‑matter’da tanımlanır. Varsayılan “Bulvegetir” değeri
-         temelde her sayfada front‑matter’da bir title olduğu için bu değer kullanılacak.
-         Filtresiz doğrudan title değişkeni gösterilir; title yoksa boş kalır. -->
+    <!-- Başlık (title) değişkeni, front‑matter’da tanımlanır.
+         Varsayılan “Bulvegetir” değeri title verilmediğinde boş kalır. -->
     <h1><a href="/">{{ title }}</a></h1>
   </div>
 
-  <!-- Navigasyon menüsü -->
+  <!-- Navigasyon menüsü (tam, tüm sayfalar için ortak) -->
   <nav class="main-nav">
     <ul>
       <li><a href="/" class="nav-link">Ana Sayfa</a></li>
