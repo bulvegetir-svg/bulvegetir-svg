@@ -1,20 +1,28 @@
 {# header.njk – Site genel menüsü #}
 <header class="site-header">
   <div class="logo">
-    <!-- Başlık (title) değişkeni, front‑matter’da tanımlanır.
-         Varsayılan “Bulvegetir” değeri title verilmediğinde boş kalır. -->
-    <h1><a href="/">{{ title }}</a></h1>
+    <!-- Başlık (title) değişkeni, front‑matter’da tanımlanır. Varsayılan “Bulvegetir” -->
+    <h1><a href="/">{{ title | default('Bulvegetir') }}</a></h1>
   </div>
 
-  <!-- Navigasyon menüsü (tam, tüm sayfalar için ortak) -->
+  <!-- Navigasyon menüsü -->
   <nav class="main-nav">
-    <ul>
-      <li><a href="/" class="nav-link">Ana Sayfa</a></li>
-      <li><a href="/about/" class="nav-link">Hakkımızda</a></li>
-      <li><a href="/contact/" class="nav-link">İletişim</a></li>
-      <li><a href="/cart/" class="nav-link">Sepet</a></li>
-      <li><a href="/test/" class="nav-link">Test Sayfası</a></li>
-      <li><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
+    <ul class="nav-list">
+      <li class="nav-item"><a href="/" class="nav-link">Ana Sayfa</a></li>
+      <li class="nav-item"><a href="/products/" class="nav-link">Ürünler</a></li>
+
+      <!-- Destek dropdown – içinde iki alt link gösterilir -->
+      <li class="nav-item dropdown">
+        <a href="/support/" class="nav-link dropdown-toggle">Destek</a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-item"><a href="/support/" class="nav-link">Destek Merkezi</a></li>
+          <li class="dropdown-item"><a href="/contact/" class="nav-link">İletişim</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item"><a href="/cart/" class="nav-link">Sepet</a></li>
+      <li class="nav-item"><a href="/test/" class="nav-link">Test Sayfası</a></li>
+      <li class="nav-item"><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
     </ul>
   </nav>
 </header>

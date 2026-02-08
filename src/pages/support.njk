@@ -1,0 +1,45 @@
+---
+title: "Destek"
+pageClass: "support-page"
+layout: layout                 # src/_includes/layout.njk şablonunu kullanır
+permalink: "/support/"         # Çıktı yolu: dist/support/index.html
+---
+{% block content %}
+  <section class="support-section">
+    <h1>Destek Merkezi</h1>
+
+    <h2>Sıkça Sorulan Sorular (SSS)</h2>
+    <ul class="faq-list">
+      <li>
+        <strong>Soru:</strong> Şifremi nasıl sıfırlarım?<br>
+        <strong>Cevap:</strong> Giriş sayfasındaki “Şifremi Unuttum” linkine tıklayın ve talimatları izleyin.
+      </li>
+      <li>
+        <strong>Soru:</strong> Siparişimi nasıl takip edebilirim?<br>
+        <strong>Cevap:</strong> Gönderi onayı e‑postasındaki “Sipariş Takip” linkini kullanın.
+      </li>
+      <li>
+        <strong>Soru:</strong> İade politikası nedir?<br>
+        <strong>Cevap:</strong> Ürün teslim tarihinden itibaren 30 gün içinde iade hakkınız vardır. Detaylı bilgi “İade Şartları” sayfasında bulunur.
+      </li>
+    </ul>
+
+    <h2>İletişim</h2>
+    <p>
+      Daha fazla sorunuz varsa aşağıdaki formu doldurun; en kısa sürede size geri dönüş yapacağız.
+    </p>
+
+    <form action="https://formspree.io/f/your-form-id" method="POST" class="support-form">
+      <label for="name">İsim</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">E‑posta</label>
+      <input type="email" id="email" name="_replyto" required>
+
+      <label for="message">Mesaj</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="button primary">Gönder</button>
+    </form>
+  </section>
+{% endblock %}
