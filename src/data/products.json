@@ -3,12 +3,14 @@
     {
       "id": 1,
       "name": "Elma",
-      "price": 12.5
+      "price": 12.5,
+      "slug": "elma"
     },
     {
       "id": 2,
       "name": "Armut",
-      "price": 15.0
+      "price": 15.0,
+      "slug": "armut"
     }
   ]
 }
