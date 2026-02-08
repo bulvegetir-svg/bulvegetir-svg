@@ -1,12 +1,12 @@
 ---
-layout: layout                     # src/_includes/layout.njk kullanılacak
+layout: layout                     # src/_includes/layout.njk kullanır
 pagination:
-  data: "collections.products.products"   # Eleventy koleksiyonundan diziyi al
-  size: 1                         # Tek bir öğe başına bir sayfa
-  alias: product                   # Şablonda bu obje `product` adıyla erişilir
-permalink: "/product/{{ product.slug }}/"   # Çıktı yolu: /product/<slug>/
+  data: "collections.products"      # koleksiyon artık doğrudan dizi
+  size: 1                           # bir öğe başına bir sayfa
+  alias: product                    # şablonda bu obje `product` adıyla erişilir
+permalink: "/product/{{ product.slug }}/"   # /product/<slug>/ yoluna çıktı
 eleventyComputed:
-  title: "{{ product.name }}"      # Sayfa başlığı dinamik olarak ürün adı
+  title: "{{ product.name }}"       # sayfa başlığı dinamik olarak ürün adı
 ---
 {% block content %}
   <section class="product-detail">
