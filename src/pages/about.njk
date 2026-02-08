@@ -1,0 +1,26 @@
+---
+title: "Hakkımızda"
+pageClass: "about-page"
+layout: default          # Eleventy’e “default” takma adıyla layout.njk’yi kullandırır.
+---
+{% extends "../_includes/layout.njk" %}
+{% block content %}
+  <section class="about-section">
+    <h1>Hakkımızda</h1>
+    <p>
+      Bulvegetir, 2009’dan beri Türkiye‑İzmir‑ bölgesinde
+      taze, yerel ve sürdürülebilir sebze‑ve‑meyve tedariki yapmaktadır.
+      Misyonumuz, çiftçiler ile tüketiciyi tek bir platformda buluşturarak
+      şeffaf, güvenli ve hızlı bir alışveriş deneyimi sunmaktır.
+    </p>
+
+    <h2>Değerlerimiz</h2>
+    <ul>
+      <li>Yerel üreticiyi desteklemek</li>
+      <li>Çevre dostu paketleme</li>
+      <li>Müşteri memnuniyeti odaklı hizmet</li>
+    </ul>
+
+    <a href="/" class="button primary">Ana Sayfaya Dön</a>
+  </section>
+{% endblock %}
