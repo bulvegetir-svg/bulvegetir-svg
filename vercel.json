@@ -1,5 +1,4 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "eleventy"
+  "outputDirectory": "dist"
 }
