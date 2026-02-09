@@ -5,13 +5,13 @@
     <!-- SEO ve tarayıcı uyumluluğu -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bulvegetir – Ana Sayfa</title>
+    <title>Destek</title>
 
     <!-- Açıklama meta etiketi -->
     <meta name="description"
           content="Bulvegetir – Tek CSS ve tek JS ile SEO‑uyumlu, aktif e‑ticaret">
     <!-- Open Graph – sosyal medya ön izlemeleri -->
-    <meta property="og:title" content="Bulvegetir – Ana Sayfa">
+    <meta property="og:title" content="Destek">
     <meta property="og:description"
           content="Bulvegetir – Tek CSS ve tek JS ile SEO‑uyumlu, aktif e‑ticaret">
     <meta property="og:type" content="website">
@@ -22,13 +22,13 @@
     <link rel="stylesheet" href="/style.min.css">
   </head>
 
-  <body class="site-body">
+  <body class="support-page">
     
 <header class="site-header">
   <div class="logo">
     <!-- Başlık (title) değişkeni front‑matter’da tanımlanır.
          Varsayılan “Bulvegetir” değeri, title boşsa boş kalır. -->
-    <h1><a href="/">Bulvegetir – Ana Sayfa</a></h1>
+    <h1><a href="/">Destek</a></h1>
   </div>
 
   <!-- Navigasyon menüsü -->
@@ -56,19 +56,42 @@
 
     <main class="site-main">
       
-  <section class="home-section">
-    <h1>Bulvegetir’e Hoş Geldiniz</h1>
+  <section class="support-section">
+    <h1>Destek Merkezi</h1>
 
+    <h2>Sıkça Sorulan Sorular (SSS)</h2>
+    <ul class="faq-list">
+      <li>
+        <strong>Soru:</strong> Şifremi nasıl sıfırlarım?<br>
+        <strong>Cevap:</strong> Giriş sayfasındaki “Şifremi Unuttum” linkine tıklayın ve talimatları izleyin.
+      </li>
+      <li>
+        <strong>Soru:</strong> Siparişimi nasıl takip edebilirim?<br>
+        <strong>Cevap:</strong> Gönderi onayı e‑postasındaki “Sipariş Takip” linkini kullanın.
+      </li>
+      <li>
+        <strong>Soru:</strong> İade politikası nedir?<br>
+        <strong>Cevap:</strong> Ürün teslim tarihinden itibaren 30 gün içinde iade hakkınız vardır. Detaylı bilgi “İade Şartları” sayfasında bulunur.
+      </li>
+    </ul>
+
+    <h2>İletişim</h2>
     <p>
-      Bu, projede başlangıç için basit bir index sayfasıdır.
-      Buradan diğer sayfalara geçiş yapabilirsiniz.
+      Daha fazla sorunuz varsa aşağıdaki formu doldurun; en kısa sürede size geri dönüş yapacağız.
     </p>
 
-    <div class="home-links">
-      <a href="/cart/" class="button primary">Sepet</a>
-      <a href="/test/" class="button secondary">Test Sayfası</a>
-      <a href="/thankyou/" class="button tertiary">Teşekkür</a>
-    </div>
+    <form action="https://formspree.io/f/your-form-id" method="POST" class="support-form">
+      <label for="name">İsim</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">E‑posta</label>
+      <input type="email" id="email" name="_replyto" required>
+
+      <label for="message">Mesaj</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="button primary">Gönder</button>
+    </form>
   </section>
 
 
