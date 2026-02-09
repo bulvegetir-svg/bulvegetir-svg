@@ -1,29 +1,54 @@
-{# header.njk – Site genel menüsü #}
-<header class="site-header">
+<header class="head-bar">
   <div class="logo">
-    <!-- Başlık (title) değişkeni front‑matter’da tanımlanır.
-         Varsayılan “Bulvegetir” değeri, title boşsa boş kalır. -->
-    <h1><a href="/">{{ title }}</a></h1>
+    <a href="/">Bulvegetir</a>
   </div>
-
-  <!-- Navigasyon menüsü -->
   <nav class="main-nav">
     <ul class="nav-list">
       <li class="nav-item"><a href="/" class="nav-link">Ana Sayfa</a></li>
       <li class="nav-item"><a href="/products/" class="nav-link">Ürünler</a></li>
-
-      <!-- Destek dropdown – içinde iki alt link -->
-      <li class="nav-item dropdown">
-        <a href="/support/" class="nav-link dropdown-toggle">Destek</a>
-        <ul class="dropdown-menu">
-          <li class="dropdown-item"><a href="/support/" class="nav-link">Destek Merkezi</a></li>
-          <li class="dropdown-item"><a href="/contact/" class="nav-link">İletişim</a></li>
-        </ul>
-      </li>
-
+      <li class="nav-item"><a href="/support/" class="nav-link">Destek</a></li>
       <li class="nav-item"><a href="/cart/" class="nav-link">Sepet</a></li>
-      <li class="nav-item"><a href="/test/" class="nav-link">Test Sayfası</a></li>
       <li class="nav-item"><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
     </ul>
   </nav>
 </header>
+
+<style>
+  .head-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 9999;
+  }
+  .head-bar .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .head-bar .main-nav .nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  .head-bar .main-nav .nav-item {
+    margin-left: 20px;
+  }
+  .head-bar .main-nav .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  body {
+    margin-top: 60px; /* sabit head bar için içerik aşağı kaydırılır */
+  }
+</style>
