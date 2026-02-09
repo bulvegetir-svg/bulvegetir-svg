@@ -8,3 +8,9 @@
   "cleanUrls": true,
   "trailingSlash": false
 }
+{
+  "github": { "enabled": false },               // Vercel’in Github‑App otomatik deployunu kapatır
+  "builds": [
+    { "src": "dist/**", "use": "@vercel/static" } // Statik dosyaları `dist`‑den sun
+  ]
+}
