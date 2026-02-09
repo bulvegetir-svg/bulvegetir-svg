@@ -2,7 +2,7 @@ name: Deploy to Vercel
 
 on:
   push:
-    branches: [ main ]          # yalnızca main branch’inde çalışır
+    branches: [ main ] # yalnızca main branch’inde çalışır
 
 jobs:
   vercel-deploy:
@@ -11,24 +11,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # (Opsiyonel) Node.js kurulumu – projenizde npm paketleri varsa
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'    # tercihe göre versiyon
+          node-version: '20' # tercihe göre versiyon
 
       - name: Install dependencies
-        run: npm ci            # paketleri kurar
+        run: npm ci   # paketleri kurar
 
       - name: Build project
-        run: npm run build     # eleventy → dist/ klasörünü üretir
+        run: npm run build   # eleventy → dist/ klasörünü üretir
+
+      # ────────────────────────────────────────────────────────
+      # 1️⃣  DEBUG: dist klasörünün içeriğini listele (adım 1)
+      # ────────────────────────────────────────────────────────
+      - name: List built files
+        run: |
+          echo "=== CONTENTS OF dist ==="
+          ls -R dist
+          echo "=== END OF dist ==="
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}   # ← buraya secret bağlanıyor
-          vercel-args: '--prod'                     # prod ortamına deploy
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}   # (isteğe bağlı, Vercel org ID)
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} # (isteğe bağlı)
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-args: '--prod --force'   # 2️⃣ force‑deploy
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}   # (isteğe bağlı)
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}   # (isteğe bağlı)
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
