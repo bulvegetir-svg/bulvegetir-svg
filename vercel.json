@@ -1,16 +1,23 @@
 {
+  "github": {
+    "enabled": false
+  },
+
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+
   "rewrites": [
-    { "source": "/support", "destination": "/support/index.html" },
+    { "source": "/support",  "destination": "/support/index.html" },
     { "source": "/support/", "destination": "/support/index.html" }
   ],
+
   "cleanUrls": true,
-  "trailingSlash": false
-}
-{
-  "github": { "enabled": false },               // Vercel’in Github‑App otomatik deployunu kapatır
+  "trailingSlash": false,
+
   "builds": [
-    { "src": "dist/**", "use": "@vercel/static" } // Statik dosyaları `dist`‑den sun
+    {
+      "src": "dist/**",
+      "use": "@vercel/static"
+    }
   ]
 }
