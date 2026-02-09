@@ -1,23 +1,23 @@
 ---
 title: "Ürünler"
-pageClass: "products-page"
-layout: layout                 # Eleventy, src/_includes/layout.njk dosyasını kullanır
-permalink: "/products/"        # Çıktı yolu: dist/products/index.html
+layout: layout          # layout dosyanız `_includes/layout.njk` olduğu için sadece “layout” yeterli
+permalink: "/products/" # ← Eleventy bu dosyayı dist/products/index.html olarak oluşturur
 ---
-{% block content %}
-  <section class="products-section">
-    <h1>Ürün Kataloğu</h1>
 
-    {# Eleventy koleksiyonundan “products” adıyla gelen verileri döngüyle gösteriyoruz #}
-    <ul class="product-list">
-      {% for product in collections.products.products %}   {# collections.products.products  → products.json dosyasındaki dizi #}
-        <li class="product-item">
-          <h2>{{ product.name }}</h2>
-          <p>Fiyat: <strong>{{ product.price | currency }}</strong> TL</p>
-        </li>
-      {% else %}
-        <li>Şu anda listelenecek ürün yok.</li>
-      {% endfor %}
-    </ul>
-  </section>
-{% endblock %}
+<h1>Ürünler</h1>
+
+{% if collections.products and collections.products.length > 0 %}
+  <p>Toplam ürün: {{ collections.products.length }}</p>
+
+  <ul>
+    {% for product in collections.products %}
+      <li>
+        <a href="/product/{{ product.slug }}/">
+          {{ product.name }} – {{ product.price | currency }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Ürün bulunamadı.</p>
+{% endif %}
