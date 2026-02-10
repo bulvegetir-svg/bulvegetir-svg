@@ -23,34 +23,30 @@
   </head>
 
   <body class="thankyou-page">
-    
-<header class="site-header">
+    <header class="head-bar">
   <div class="logo">
-    <!-- Başlık (title) değişkeni front‑matter’da tanımlanır.
-         Varsayılan “Bulvegetir” değeri, title boşsa boş kalır. -->
-    <h1><a href="/">Sipariş Teşekkür</a></h1>
+    <a href="/">
+      <img src="/assets/logo.svg" alt="BulGetir Logo" height="40" />
+    </a>
   </div>
-
-  <!-- Navigasyon menüsü -->
+  <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
   <nav class="main-nav">
     <ul class="nav-list">
       <li class="nav-item"><a href="/" class="nav-link">Ana Sayfa</a></li>
       <li class="nav-item"><a href="/products/" class="nav-link">Ürünler</a></li>
-
-      <!-- Destek dropdown – içinde iki alt link -->
-      <li class="nav-item dropdown">
-        <a href="/support/" class="nav-link dropdown-toggle">Destek</a>
-        <ul class="dropdown-menu">
-          <li class="dropdown-item"><a href="/support/" class="nav-link">Destek Merkezi</a></li>
-          <li class="dropdown-item"><a href="/contact/" class="nav-link">İletişim</a></li>
-        </ul>
-      </li>
-
+      <li class="nav-item"><a href="/support/" class="nav-link">Destek</a></li>
       <li class="nav-item"><a href="/cart/" class="nav-link">Sepet</a></li>
-      <li class="nav-item"><a href="/test/" class="nav-link">Test Sayfası</a></li>
       <li class="nav-item"><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
     </ul>
   </nav>
+  <div class="icons">
+    <a href="/signin" class="icon-link" aria-label="Giriş">
+      <span class="icon">👤</span>
+    </a>
+    <a href="/cart" class="icon-link" aria-label="Sepetim">
+      <span class="icon">🛒</span>
+    </a>
+  </div>
 </header>
 
 
@@ -65,8 +61,22 @@
 
     </main>
 
-    <footer>
-  <p>&copy; 2026 Bulvegetir</p>
+    <footer class="footer">
+  <div class="footer-content">
+    <img src="/assets/logo.svg" alt="BulGetir Logo" height="30" />
+    <p>&copy; 2026 Bul Getir. Tüm hakları saklıdır.</p>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="/support/">Destek</a></li>
+        <li><a href="/products/">Ürünler</a></li>
+        <li><a href="/thankyou/">Teşekkür</a></li>
+      </ul>
+    </nav>
+    <ul class="footer__social">
+      <li><a href="/signin" aria-label="Giriş">👤</a></li>
+      <li><a href="/cart" aria-label="Sepetim">🛒</a></li>
+    </ul>
+  </div>
 </footer>
 
 

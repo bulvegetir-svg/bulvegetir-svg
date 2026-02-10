@@ -1,73 +1,38 @@
-/* ===========================
-   FOOTER
-   =========================== */
-.footer {
-  background-color: #2e5c47; // header ile aynı renk
-  color: #fff;
-  height: 120px; // PC'de header'ın 2 katı yükseklik
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  margin-top: 2rem;
-
-  a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  &__social {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    margin: 0;
-
-    li {
-      display: inline;
-    }
-
-    a {
-      font-size: 20px;
-      color: #fff;
-      text-decoration: none;
-    }
-  }
+/* Navbar link animasyonu */
+.main-nav .nav-link {
+  transition: all 0.3s ease;
+}
+.main-nav .nav-link:hover {
+  transform: scale(1.05);
+  color: #ffd700; /* altın tonunda vurgu */
 }
 
-/* ===========================
-   MOBİL OPTİMİZASYON
-   =========================== */
-@media (max-width: 768px) {
-  .footer {
-    height: auto; // mobilde esnek yükseklik
-    flex-direction: column;
-    padding: 1rem;
-    text-align: center;
-  }
+/* Dropdown menü animasyonu */
+.main-nav .nav-list .nav-item ul {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+.main-nav .nav-list .nav-item:hover ul {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  .footer a {
-    font-size: 12px; // linkler mobilde daha küçük
-  }
-
-  .footer__social a {
-    font-size: 16px; // ikonlar mobilde biraz küçülür
-  }
-
-  .footer-content {
-    flex-direction: column;
-    gap: 10px;
-  }
+/* Footer link animasyonu */
+.footer-nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.footer-nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+.footer-nav a:hover::after {
+  width: 100%;
 }
