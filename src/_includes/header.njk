@@ -12,6 +12,16 @@
       <li class="nav-item"><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
     </ul>
   </nav>
+  <div class="icons">
+    <a href="/signin" class="icon-link" aria-label="Giriş">
+      <!-- Kullanıcı ikonu -->
+      <span class="icon">👤</span>
+    </a>
+    <a href="/cart" class="icon-link" aria-label="Sepetim">
+      <!-- Sepet ikonu -->
+      <span class="icon">🛒</span>
+    </a>
+  </div>
 </header>
 
 <style>
@@ -19,7 +29,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     height: 60px;
-    background-color: #222;
+    background-color: #1b3d2f; /* soft koyu yeşil */
     color: #fff;
     display: flex;
     align-items: center;
@@ -37,6 +47,12 @@
   }
   .main-nav .nav-item { margin-left:20px; }
   .main-nav .nav-link { color:#fff; text-decoration:none; font-size:16px; }
+  .icons {
+    display:flex;
+    align-items:center;
+    gap:15px;
+  }
+  .icon-link { color:#fff; font-size:20px; text-decoration:none; }
   body { margin-top:60px; }
 
   /* Mobil görünüm */
@@ -45,13 +61,13 @@
     .main-nav {
       position:absolute;
       top:60px; left:0; right:0;
-      background-color:#222;
+      background-color:#1b3d2f;
       max-height:0;
       overflow:hidden;
       transition:max-height 0.3s ease-out;
     }
     .main-nav.active {
-      max-height:300px; /* menü açıldığında kayarak görünür */
+      max-height:300px;
       transition:max-height 0.3s ease-in;
     }
     .main-nav .nav-list {
