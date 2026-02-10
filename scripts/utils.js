@@ -1,4 +1,4 @@
-/* version: 0.1.2 – 2026-02-10 */
+/* version: 0.1.3 – 2026-02-10 */
 export const formatCurrency = (num, locale = 'tr-TR', cur = 'TRY') => {
   return new Intl.NumberFormat(locale, { style: 'currency', currency: cur }).format(num);
 };
@@ -51,7 +51,6 @@ export const initRelatedProducts = () => {
   const container = document.querySelector(".related-products");
   if (!container) return;
 
-  // Basit örnek: ilgili ürünleri yükle
   const products = [
     { name: "Ürün A", link: "/products/a" },
     { name: "Ürün B", link: "/products/b" },
