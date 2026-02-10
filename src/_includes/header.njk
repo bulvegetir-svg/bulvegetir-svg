@@ -1,29 +1,87 @@
-{# header.njk – Site genel menüsü #}
-<header class="site-header">
+<header class="head-bar">
   <div class="logo">
-    <!-- Başlık (title) değişkeni front‑matter’da tanımlanır.
-         Varsayılan “Bulvegetir” değeri, title boşsa boş kalır. -->
-    <h1><a href="/">{{ title }}</a></h1>
+    <a href="/">Bulvegetir</a>
   </div>
-
-  <!-- Navigasyon menüsü -->
+  <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
   <nav class="main-nav">
     <ul class="nav-list">
       <li class="nav-item"><a href="/" class="nav-link">Ana Sayfa</a></li>
       <li class="nav-item"><a href="/products/" class="nav-link">Ürünler</a></li>
-
-      <!-- Destek dropdown – içinde iki alt link -->
-      <li class="nav-item dropdown">
-        <a href="/support/" class="nav-link dropdown-toggle">Destek</a>
-        <ul class="dropdown-menu">
-          <li class="dropdown-item"><a href="/support/" class="nav-link">Destek Merkezi</a></li>
-          <li class="dropdown-item"><a href="/contact/" class="nav-link">İletişim</a></li>
-        </ul>
-      </li>
-
+      <li class="nav-item"><a href="/support/" class="nav-link">Destek</a></li>
       <li class="nav-item"><a href="/cart/" class="nav-link">Sepet</a></li>
-      <li class="nav-item"><a href="/test/" class="nav-link">Test Sayfası</a></li>
       <li class="nav-item"><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
     </ul>
   </nav>
+  <div class="icons">
+    <a href="/signin" class="icon-link" aria-label="Giriş">
+      <span class="icon">👤</span>
+    </a>
+    <a href="/cart" class="icon-link" aria-label="Sepetim">
+      <span class="icon">🛒</span>
+    </a>
+  </div>
 </header>
+
+<style>
+  .head-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background-color: #2e5c47; /* soft koyu yeşil */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 9999;
+  }
+  .logo a { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+  .menu-toggle {
+    display:none;
+    background:none; border:none; color:#fff; font-size:28px; cursor:pointer;
+  }
+  .main-nav .nav-list {
+    list-style:none; display:flex; margin:0; padding:0;
+  }
+  .main-nav .nav-item { margin-left:20px; }
+  .main-nav .nav-link { color:#fff; text-decoration:none; font-size:16px; }
+  .icons {
+    display:flex;
+    align-items:center;
+    gap:15px;
+  }
+  .icon-link { color:#fff; font-size:20px; text-decoration:none; }
+  body { margin-top:60px; }
+
+  /* Mobil görünüm */
+  @media (max-width:768px) {
+    .menu-toggle { display:block; }
+    .main-nav {
+      position:absolute;
+      top:60px; left:0; right:0;
+      background-color:#2e5c47;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height 0.3s ease-out;
+    }
+    .main-nav.active {
+      max-height:300px;
+      transition:max-height 0.3s ease-in;
+    }
+    .main-nav .nav-list {
+      flex-direction:column;
+      text-align:center;
+    }
+    .main-nav .nav-item { margin:10px 0; }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".main-nav");
+    toggle.addEventListener("click", function() {
+      nav.classList.toggle("active");
+    });
+  });
+</script>
