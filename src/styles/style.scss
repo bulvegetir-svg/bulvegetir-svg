@@ -161,3 +161,27 @@ a {
     }
   }
 }
+/* ===========================
+   MOBİL OPTİMİZASYON
+   =========================== */
+@media (max-width: 768px) {
+  .footer {
+    height: auto; // mobilde esnek yükseklik
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .footer a {
+    font-size: 12px; // linkler mobilde daha küçük
+  }
+
+  .footer__social a {
+    font-size: 16px; // ikonlar mobilde biraz küçülür
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
