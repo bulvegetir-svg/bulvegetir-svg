@@ -36,6 +36,14 @@ export const initNav = () => {
       navList.classList.toggle("active");
     });
   }
+
+  // Mobilde linke tıklanınca menüyü kapat
+  const navLinks = document.querySelectorAll(".nav-list .nav-link");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      navList.classList.remove("active");
+    });
+  });
 };
 
 /* Ürün sayfası: ilgili ürünler */
