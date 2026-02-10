@@ -8,16 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Navbar hamburger menü
   initNav();
 
-  // Hamburger toggle
-  const hamburger = document.querySelector(".hamburger");
-  const navList = document.querySelector(".nav-list");
-
-  if (hamburger && navList) {
-    hamburger.addEventListener("click", () => {
-      navList.classList.toggle("active");
-    });
-  }
-
   // Ürün sayfası ilgili ürünler
   initRelatedProducts();
 });
