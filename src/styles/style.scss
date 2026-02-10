@@ -117,30 +117,47 @@ a {
    FOOTER
    =========================== */
 .footer {
-  background: #1a1a1a;
+  background-color: #2e5c47; // header ile aynı renk
   color: #fff;
-  text-align: center;
-  padding: 2rem 1rem;
+  height: 60px; // header ile aynı yükseklik
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // header ile aynı hizalama
+  padding: 0 20px;
   margin-top: 2rem;
 
   a {
-    color: #1080d0;
+    color: #fff;
     text-decoration: none;
+    font-size: 14px;
 
     &:hover {
       text-decoration: underline;
     }
   }
 
+  &-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
   &__social {
     list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 15px;
+    margin: 0;
 
     li {
       display: inline;
+    }
+
+    a {
+      font-size: 20px;
+      color: #fff;
+      text-decoration: none;
     }
   }
 }
