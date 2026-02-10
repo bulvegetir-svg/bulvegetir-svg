@@ -1,3 +1,51 @@
-<footer>
-  <p>&copy; 2026 Bulvegetir</p>
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>© 2026 Bulvegetir. Tüm hakları saklıdır.</p>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="/support/">Destek</a></li>
+        <li><a href="/products/">Ürünler</a></li>
+        <li><a href="/thankyou/">Teşekkür</a></li>
+      </ul>
+    </nav>
+    <div class="footer-icons">
+      <a href="/signin" aria-label="Giriş"><span class="icon">👤</span></a>
+      <a href="/cart" aria-label="Sepetim"><span class="icon">🛒</span></a>
+    </div>
+  </div>
 </footer>
+
+<style>
+  .site-footer {
+    background-color: #2e5c47; /* soft koyu yeşil */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+  }
+  .footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .footer-icons {
+    display: flex;
+    gap: 15px;
+  }
+  .footer-icons .icon {
+    font-size: 20px;
+  }
+</style>
