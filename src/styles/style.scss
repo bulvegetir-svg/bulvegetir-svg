@@ -1,128 +1,13 @@
 /* ===========================
-   GENEL STİLLER
-   =========================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-}
-
-body {
-  background: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Linkler */
-a {
-  color: #1080d0;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-/* ===========================
-   NAVBAR
-   =========================== */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #1080d0;
-  padding: 1rem;
-  color: #fff;
-  position: relative;
-
-  &__logo a {
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  &__toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #fff;
-    display: block;
-  }
-
-  &__links {
-    list-style: none;
-    display: none;
-    flex-direction: column;
-    background: #1a1a1a;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    z-index: 10;
-
-    a {
-      color: #fff;
-      text-decoration: none;
-      padding: 0.5rem 0;
-      display: block;
-    }
-  }
-
-  &.active .navbar__links {
-    display: flex;
-  }
-}
-
-.dropdown {
-  &__toggle {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1rem;
-    text-align: left;
-    width: 100%;
-    padding: 0.5rem 0;
-  }
-
-  &__menu,
-  &__submenu {
-    display: none;
-    list-style: none;
-    padding-left: 1rem;
-
-    a {
-      color: #fff;
-      text-decoration: none;
-      padding: 0.25rem 0;
-      display: block;
-    }
-  }
-
-  &.active > .dropdown__menu {
-    display: block;
-  }
-
-  &__item.active > .dropdown__submenu {
-    display: block;
-  }
-}
-
-/* ===========================
    FOOTER
    =========================== */
 .footer {
   background-color: #2e5c47; // header ile aynı renk
   color: #fff;
-  height: 60px; // header ile aynı yükseklik
+  height: 120px; // PC'de header'ın 2 katı yükseklik
   display: flex;
   align-items: center;
-  justify-content: space-between; // header ile aynı hizalama
+  justify-content: space-between;
   padding: 0 20px;
   margin-top: 2rem;
 
@@ -161,6 +46,7 @@ a {
     }
   }
 }
+
 /* ===========================
    MOBİL OPTİMİZASYON
    =========================== */
