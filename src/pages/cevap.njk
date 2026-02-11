@@ -21,10 +21,11 @@ permalink: /cevap/index.html
 
     if (query) {
       queryDisplay.textContent = query;
+      // XML dosyasını kök dizinden çek
       fetch('/search-data.xml')
         .then(response => {
           if (!response.ok) {
-            throw new Error('XML dosyası yüklenemedi');
+            throw new Error('XML dosyası yüklenemedi: ' + response.statusText);
           }
           return response.text();
         })
@@ -43,7 +44,6 @@ permalink: /cevap/index.html
               const url = urlElement.textContent;
               const keywords = keywordsElement.textContent.toLowerCase();
               
-              // Eşleştirme mantığı: Küçük harfe çevirerek karşılaştır
               if (title.toLowerCase().includes(query.toLowerCase()) || keywords.includes(query.toLowerCase())) {
                 results.push(`<div class="search-result-item" style="padding: 10px; border-bottom: 1px solid #eee;"><a href="${url}" style="color: #00796b; text-decoration: none; font-weight: bold;">${title}</a></div>`);
               }

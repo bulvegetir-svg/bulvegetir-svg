@@ -14,14 +14,12 @@
 </head>
 
 <body class="site-body">
-  <!-- Header -->
   <header class="head-bar">
     <div class="logo">
       <a href="/">
         <img src="/assets/logo.svg" alt="BulGetir Logo" height="40" />
       </a>
     </div>
-    <!-- Hamburger butonu -->
     <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
     <nav class="menu">
       <ul>
@@ -38,7 +36,6 @@
     </div>
   </header>
 
-  <!-- Ana içerik -->
   <main class="site-main">
     
 <section class="search-results-section" style="padding: 20px;">
@@ -58,10 +55,11 @@
 
     if (query) {
       queryDisplay.textContent = query;
+      // XML dosyasını kök dizinden çek
       fetch('/search-data.xml')
         .then(response => {
           if (!response.ok) {
-            throw new Error('XML dosyası yüklenemedi');
+            throw new Error('XML dosyası yüklenemedi: ' + response.statusText);
           }
           return response.text();
         })
@@ -80,7 +78,6 @@
               const url = urlElement.textContent;
               const keywords = keywordsElement.textContent.toLowerCase();
               
-              // Eşleştirme mantığı: Küçük harfe çevirerek karşılaştır
               if (title.toLowerCase().includes(query.toLowerCase()) || keywords.includes(query.toLowerCase())) {
                 results.push(`<div class="search-result-item" style="padding: 10px; border-bottom: 1px solid #eee;"><a href="${url}" style="color: #00796b; text-decoration: none; font-weight: bold;">${title}</a></div>`);
               }
@@ -104,7 +101,6 @@
 </script>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
       <img src="/assets/logo.svg" alt="BulGetir Logo" height="30" />
@@ -123,27 +119,6 @@
     </div>
   </footer>
 
-  <!-- Script -->
   <script src="/script.min.js" defer></script>
 </body>
 </html>
----
-title: "Bulvegetir – Ana Sayfa"
-layout: layout                 # ← yeni layout dosyası
----
-
-  <section class="home-section">
-    <h1>Bulvegetir’e Hoş Geldiniz</h1>
-
-    <p>
-      Bu, projede başlangıç için basit bir index sayfasıdır.
-      Buradan diğer sayfalara geçiş yapabilirsiniz.
-    </p>
-
-    <div class="home-links">
-      <a href="/cart/" class="button primary">Sepet</a>
-      <a href="/test/" class="button secondary">Test Sayfası</a>
-      <a href="/thankyou/" class="button tertiary">Teşekkür</a>
-    </div>
-  </section>
-
