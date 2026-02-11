@@ -57,13 +57,15 @@ body {
   gap: 10px;
 }
 
-/* Hamburger - Varsayılan olarak gizli */
-.hamburger {
+/* Hamburger - Varsayılan olarak gizli (Sınıf ismi düzeltildi: .menu-toggle) */
+.menu-toggle {
   display: none;
   cursor: pointer;
   font-size: 24px;
   color: #fff;
   padding: 5px;
+  background: none;
+  border: none;
 }
 
 /* Footer */
@@ -122,8 +124,8 @@ body {
     display: flex;
   }
 
-  .hamburger {
-    display: block;             /* Mobilde göster */
+  .menu-toggle {
+    display: block;             /* Mobilde göster (Sınıf ismi düzeltildi: .menu-toggle) */
     align-self: flex-end;       /* Hamburger sağa hizalanır */
   }
 
@@ -134,7 +136,7 @@ body {
 
 /* Masaüstü Görünümü (Kesin gizleme) */
 @media (min-width: 769px) {
-  .hamburger {
-    display: none !important; // Kesinlikle gizle
+  .menu-toggle {
+    display: none !important; // Kesinlikle gizle (Sınıf ismi düzeltildi: .menu-toggle)
   }
 }
