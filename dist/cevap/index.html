@@ -41,7 +41,7 @@
   <!-- Ana içerik -->
   <main class="site-main">
     
-<section class="search-results-section">
+<section class="search-results-section" style="padding: 20px;">
   <h1>Arama Sonuçları</h1>
   <p>Aranan kelime: <strong id="search-query"></strong></p>
   <div id="results-container">
@@ -50,7 +50,6 @@
 </section>
 
 <script>
-  // Arama sonuçlarını işleyecek basit JavaScript
   document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get('q');
@@ -60,19 +59,31 @@
     if (query) {
       queryDisplay.textContent = query;
       fetch('/search-data.xml')
-        .then(response => response.text())
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('XML dosyası yüklenemedi');
+          }
+          return response.text();
+        })
         .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
         .then(data => {
           const items = data.querySelectorAll('item');
           let results = [];
           
           items.forEach(item => {
-            const title = item.querySelector('title').textContent;
-            const url = item.querySelector('url').textContent;
-            const keywords = item.querySelector('keywords').textContent.toLowerCase();
+            const titleElement = item.querySelector('title');
+            const urlElement = item.querySelector('url');
+            const keywordsElement = item.querySelector('keywords');
             
-            if (title.toLowerCase().includes(query.toLowerCase()) || keywords.includes(query.toLowerCase())) {
-              results.push(`<div class="search-result-item"><a href="${url}">${title}</a></div>`);
+            if (titleElement && urlElement && keywordsElement) {
+              const title = titleElement.textContent;
+              const url = urlElement.textContent;
+              const keywords = keywordsElement.textContent.toLowerCase();
+              
+              // Eşleştirme mantığı: Küçük harfe çevirerek karşılaştır
+              if (title.toLowerCase().includes(query.toLowerCase()) || keywords.includes(query.toLowerCase())) {
+                results.push(`<div class="search-result-item" style="padding: 10px; border-bottom: 1px solid #eee;"><a href="${url}" style="color: #00796b; text-decoration: none; font-weight: bold;">${title}</a></div>`);
+              }
             }
           });
 
