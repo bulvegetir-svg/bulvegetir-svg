@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <title>Destek Sayfası</title>
+    <url>/support/</url>
+    <keywords>destek yardım teknik sorunlar</keywords>
+  </item>
+  <item>
+    <title>Ana Sayfa</title>
+    <url>/</url>
+    <keywords>ana sayfa hoşgeldiniz</keywords>
+  </item>
+  <item>
+    <title>Ürünler</title>
+    <url>/products/</url>
+    <keywords>ürünler liste svg</keywords>
+  </item>
+</items>
