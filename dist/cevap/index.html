@@ -59,12 +59,17 @@
       fetch('/search-data.xml')
         .then(response => {
           if (!response.ok) {
-            throw new Error('XML dosyası yüklenemedi: ' + response.statusText);
+            throw new Error('XML dosyası HTTP hatası: ' + response.status);
           }
           return response.text();
         })
         .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
         .then(data => {
+          const parserError = data.getElementsByTagName("parsererror");
+          if (parserError.length > 0) {
+            throw new Error('XML ayrıştırma hatası');
+          }
+          
           const items = data.querySelectorAll('item');
           let results = [];
           
@@ -91,7 +96,7 @@
           }
         })
         .catch(err => {
-          resultsContainer.innerHTML = '<p>Arama sonuçları yüklenirken hata oluştu.</p>';
+          resultsContainer.innerHTML = '<p>Arama sonuçları yüklenirken hata oluştu: ' + err.message + '</p>';
           console.error(err);
         });
     } else {
