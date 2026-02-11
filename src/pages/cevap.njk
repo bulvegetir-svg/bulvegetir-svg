@@ -1,0 +1,55 @@
+---
+layout: base.njk
+title: Arama Sonuçları
+---
+
+<section class="search-results-section">
+  <h1>Arama Sonuçları</h1>
+  <p>Aranan kelime: <strong id="search-query"></strong></p>
+  <div id="results-container">
+    <p>Sonuçlar yükleniyor...</p>
+  </div>
+</section>
+
+<script>
+  // Arama sonuçlarını işleyecek basit JavaScript
+  document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('q');
+    const resultsContainer = document.getElementById('results-container');
+    const queryDisplay = document.getElementById('search-query');
+
+    if (query) {
+      queryDisplay.textContent = query;
+      fetch('/search-data.xml')
+        .then(response => response.text())
+        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+        .then(data => {
+          const items = data.querySelectorAll('item');
+          let results = [];
+          
+          items.forEach(item => {
+            const title = item.querySelector('title').textContent;
+            const url = item.querySelector('url').textContent;
+            const keywords = item.querySelector('keywords').textContent.toLowerCase();
+            
+            if (title.toLowerCase().includes(query.toLowerCase()) || keywords.includes(query.toLowerCase())) {
+              results.push(`<div class="search-result-item"><a href="${url}">${title}</a></div>`);
+            }
+          });
+
+          if (results.length > 0) {
+            resultsContainer.innerHTML = results.join('');
+          } else {
+            resultsContainer.innerHTML = '<p>Sonuç bulunamadı.</p>';
+          }
+        })
+        .catch(err => {
+          resultsContainer.innerHTML = '<p>Arama sonuçları yüklenirken hata oluştu.</p>';
+          console.error(err);
+        });
+    } else {
+      resultsContainer.innerHTML = '<p>Arama sorgusu bulunamadı.</p>';
+    }
+  });
+</script>
