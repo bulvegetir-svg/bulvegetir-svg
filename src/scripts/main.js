@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   lazyLoadImages();
 
-  // Arama İşlevselliği (Yeni Eklenen Kısım)
+  // Arama İşlevselliği
   initSearch();
 
   // Sepet yönetimi
@@ -39,7 +39,7 @@ function initSearch() {
 function performSearch() {
   const query = document.getElementById('search-input').value.trim().toLowerCase();
   if (query) {
-    // Arama sorgusunu `cevap.html` sayfasına URL parametresi olarak gönder
-    window.location.href = `/cevap.html?q=${encodeURIComponent(query)}`;
+    // Yönlendirme adresi düzeltildi: /cevap/
+    window.location.href = `/cevap/?q=${encodeURIComponent(query)}`;
   }
 }
