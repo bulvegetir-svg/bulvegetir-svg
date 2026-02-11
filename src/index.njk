@@ -1,20 +1,40 @@
 ---
+layout: base.njk
 title: "Bulvegetir – Ana Sayfa"
-layout: layout                 # ← yeni layout dosyası
 ---
-{% block content %}
-  <section class="home-section">
-    <h1>Bulvegetir’e Hoş Geldiniz</h1>
 
-    <p>
-      Bu, projede başlangıç için basit bir index sayfasıdır.
-      Buradan diğer sayfalara geçiş yapabilirsiniz.
-    </p>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Taze ve Organik Ürünler</h1>
+    <p>BulGetir ile doğallık kapınızda.</p>
+    <a href="/products/" class="button primary">Alışverişe Başla</a>
+  </div>
+</section>
 
-    <div class="home-links">
-      <a href="/cart/" class="button primary">Sepet</a>
-      <a href="/test/" class="button secondary">Test Sayfası</a>
-      <a href="/thankyou/" class="button tertiary">Teşekkür</a>
+<section class="product-grid-section">
+  <h2>Öne Çıkan Ürünler</h2>
+  <div class="product-grid">
+    {% for i in range(0, 8) %}
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x250" alt="Ürün {{ i+1 }}" width="250" height="250">
+      <h3>Ürün Adı {{ i+1 }}</h3>
+      <p>100 TL</p>
+      <a href="/products/" class="button small">Detay</a>
     </div>
-  </section>
-{% endblock %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="blog-section">
+  <h2>Son Blog Yazıları</h2>
+  <div class="blog-grid">
+    <div class="blog-post">
+      <h3>Organik Beslenmenin Faydaları</h3>
+      <p>Organik gıdalar ile daha sağlıklı bir yaşam...</p>
+    </div>
+    <div class="blog-post">
+      <h3>Mevsiminde Beslenme İpuçları</h3>
+      <p>Hangi mevsimde ne yemeli?</p>
+    </div>
+  </div>
+</section>

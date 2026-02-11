@@ -1,93 +1,147 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bulvegetir – Ana Sayfa</title>
-    <meta name="description" content="Bulvegetir – Tek CSS ve tek JS ile SEO‑uyumlu, aktif e‑ticaret">
-    <meta property="og:title" content="Bulvegetir – Ana Sayfa">
-    <meta property="og:description" content="Bulvegetir – Tek CSS ve tek JS ile SEO‑uyumlu, aktif e‑ticaret">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bulvegetir-svg.vercel.app">
-    <meta property="og:image" content="/static/og-image.png">
-    <link rel="stylesheet" href="/style.min.css">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bulvegetir – Ana Sayfa</title>
+  <meta name="description" content="Bulvegetir – Tek CSS ve tek JS ile SEO‑uyumlu, aktif e‑ticaret">
+  <meta property="og:title" content="Bulvegetir – Ana Sayfa">
+  <meta property="og:description" content="Bulvegetir – Tek CSS ve tek JS ile SEO‑uyumlu, aktif e‑ticaret">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bulvegetir-svg.vercel.app">
+  <meta property="og:image" content="/assets/logo.svg">
+  <link rel="stylesheet" href="/style.min.css">
+</head>
 
-  <body class="site-body">
-    <header class="head-bar">
-  <div class="logo">
-    <a href="/">
-      <img src="/assets/logo.svg" alt="BulGetir Logo" height="40" />
-    </a>
-  </div>
-
-  <div class="search-container">
-    <input type="text" id="search-input" placeholder="Ara..." aria-label="Site içinde ara">
-    <button id="search-button" aria-label="Aramayı Başlat">🔍</button>
-  </div>
-
-  <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
-  
-  <nav class="menu">
-    <ul>
-      <li class="nav-item"><a href="/" class="nav-link">Ana Sayfa</a></li>
-      <li class="nav-item"><a href="/products/" class="nav-link">Ürünler</a></li>
-      <li class="nav-item"><a href="/support/" class="nav-link">Destek</a></li>
-      <li class="nav-item"><a href="/cart/" class="nav-link">Sepet</a></li>
-      <li class="nav-item"><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
-    </ul>
-  </nav>
-  
-  <div class="icons">
-    <a href="/signin" class="icon-link" aria-label="Giriş">
-      <span class="icon">👤</span>
-    </a>
-    <a href="/cart" class="icon-link" aria-label="Sepetim">
-      <span class="icon">🛒</span>
-    </a>
-  </div>
-</header>
-
-    <main class="site-main">
-      
-  <section class="home-section">
-    <h1>Bulvegetir’e Hoş Geldiniz</h1>
-
-    <p>
-      Bu, projede başlangıç için basit bir index sayfasıdır.
-      Buradan diğer sayfalara geçiş yapabilirsiniz.
-    </p>
-
-    <div class="home-links">
-      <a href="/cart/" class="button primary">Sepet</a>
-      <a href="/test/" class="button secondary">Test Sayfası</a>
-      <a href="/thankyou/" class="button tertiary">Teşekkür</a>
+<body class="site-body">
+  <header class="head-bar">
+    <div class="logo">
+      <a href="/">
+        <img src="/assets/logo.svg" alt="BulGetir Logo" height="40" />
+      </a>
     </div>
-  </section>
-
-
-    </main>
-
-    <footer class="footer">
-  <div class="footer-content">
-    <img src="/assets/logo.svg" alt="BulGetir Logo" height="30" />
-    <p>&copy; 2026 Bul Getir. Tüm hakları saklıdır.</p>
-    <nav class="footer-nav">
+    <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
+    <nav class="menu">
       <ul>
-        <li><a href="/support/">Destek</a></li>
-        <li><a href="/products/">Ürünler</a></li>
-        <li><a href="/thankyou/">Teşekkür</a></li>
+        <li><a href="/" class="nav-link">Ana Sayfa</a></li>
+        <li><a href="/products/" class="nav-link">Ürünler</a></li>
+        <li><a href="/support/" class="nav-link">Destek</a></li>
+        <li><a href="/cart/" class="nav-link">Sepet</a></li>
+        <li><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
       </ul>
     </nav>
-    <ul class="footer__social">
-      <li><a href="/signin" aria-label="Giriş">👤</a></li>
-      <li><a href="/cart" aria-label="Sepetim">🛒</a></li>
-    </ul>
+    <div class="icons">
+      <a href="/signin" class="icon-link" aria-label="Giriş">👤</a>
+      <a href="/cart" class="icon-link" aria-label="Sepetim">🛒</a>
+    </div>
+  </header>
+
+  <main class="site-main">
+    
+<section class="hero">
+  <div class="hero-content">
+    <h1>Taze ve Organik Ürünler</h1>
+    <p>BulGetir ile doğallık kapınızda.</p>
+    <a href="/products/" class="button primary">Alışverişe Başla</a>
   </div>
-</footer>
+</section>
 
+<section class="product-grid-section">
+  <h2>Öne Çıkan Ürünler</h2>
+  <div class="product-grid">
+    
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x250" alt="Ürün 1" width="250" height="250">
+      <h3>Ürün Adı 1</h3>
+      <p>100 TL</p>
+      <a href="/products/" class="button small">Detay</a>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x250" alt="Ürün 2" width="250" height="250">
+      <h3>Ürün Adı 2</h3>
+      <p>100 TL</p>
+      <a href="/products/" class="button small">Detay</a>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x250" alt="Ürün 3" width="250" height="250">
+      <h3>Ürün Adı 3</h3>
+      <p>100 TL</p>
+      <a href="/products/" class="button small">Detay</a>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x250" alt="Ürün 4" width="250" height="250">
+      <h3>Ürün Adı 4</h3>
+      <p>100 TL</p>
+      <a href="/products/" class="button small">Detay</a>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x250" alt="Ürün 5" width="250" height="250">
+      <h3>Ürün Adı 5</h3>
+      <p>100 TL</p>
+      <a href="/products/" class="button small">Detay</a>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x250" alt="Ürün 6" width="250" height="250">
+      <h3>Ürün Adı 6</h3>
+      <p>100 TL</p>
+      <a href="/products/" class="button small">Detay</a>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x250" alt="Ürün 7" width="250" height="250">
+      <h3>Ürün Adı 7</h3>
+      <p>100 TL</p>
+      <a href="/products/" class="button small">Detay</a>
+    </div>
+    
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x250" alt="Ürün 8" width="250" height="250">
+      <h3>Ürün Adı 8</h3>
+      <p>100 TL</p>
+      <a href="/products/" class="button small">Detay</a>
+    </div>
+    
+  </div>
+</section>
 
-    <!-- Script en sona, root'tan çağır -->
-    <script src="/script.min.js" defer></script>
-  </body>
+<section class="blog-section">
+  <h2>Son Blog Yazıları</h2>
+  <div class="blog-grid">
+    <div class="blog-post">
+      <h3>Organik Beslenmenin Faydaları</h3>
+      <p>Organik gıdalar ile daha sağlıklı bir yaşam...</p>
+    </div>
+    <div class="blog-post">
+      <h3>Mevsiminde Beslenme İpuçları</h3>
+      <p>Hangi mevsimde ne yemeli?</p>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <img src="/assets/logo.svg" alt="BulGetir Logo" height="30" />
+      <p>&copy; 2026 Bul Getir. Tüm hakları saklıdır.</p>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/support/">Destek</a></li>
+          <li><a href="/products/">Ürünler</a></li>
+          <li><a href="/thankyou/">Teşekkür</a></li>
+        </ul>
+      </nav>
+      <ul class="footer__social">
+        <li><a href="/signin" aria-label="Giriş">👤</a></li>
+        <li><a href="/cart" aria-label="Sepetim">🛒</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/script.min.js" defer></script>
+</body>
 </html>
