@@ -1,4 +1,4 @@
-/* src/scripts/utils.js – 0.1.1 – 2026-02-04 */
+/* src/scripts/utils.js – 0.1.2 – 2026-02-12 */
 
 export const formatCurrency = (num, locale = 'tr-TR', cur = 'TRY') =>
   new Intl.NumberFormat(locale, { style: 'currency', currency: cur }).format(num);
@@ -30,7 +30,8 @@ export const initNav = () => {
   const toggle = document.querySelector('.menu-toggle');
   const menu   = document.querySelector('.menu');
   if (!toggle || !menu) return;
-  toggle.addEventListener('click', () => menu.classList.toggle('open'));
+  // Kural düzeltmesi: .open yerine .active kullanılıyor
+  toggle.addEventListener('click', () => menu.classList.toggle('active'));
 };
 
 export const initRelatedProducts = () => {
