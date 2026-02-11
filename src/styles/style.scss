@@ -32,7 +32,34 @@ body {
   flex: 1 1 auto;
 }
 
-/* Menü Listesi (Sınıf ismi düzeltildi: .menu ul) */
+/* Arama Konsolu Stilleri (Yeni Eklenen Kısım) */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 0 15px;
+  flex: 0 1 300px; /* PC'de genişlik */
+}
+
+#search-input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+#search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #004d40;
+}
+
+/* Menü Listesi */
 .menu ul {
   list-style: none;
   display: flex;
@@ -107,8 +134,19 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
+  
+  .logo {
+    margin-bottom: 10px;
+  }
 
-  .menu {                /* Sınıf ismi düzeltildi: .menu */
+  /* Arama Konsolu Mobil Ayarı */
+  .search-container {
+    width: 90%;
+    margin: 0 0 10px 0;
+    flex: none;
+  }
+
+  .menu {                
     display: none;
     flex-direction: column;
     gap: 10px;
@@ -121,13 +159,15 @@ body {
     z-index: 100;
   }
 
-  .menu.active {         /* Sınıf ismi düzeltildi: .menu.active */
+  .menu.active {         
     display: flex;
   }
 
   .menu-toggle {
     display: block;
-    align-self: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 20px;
   }
 
   .head-bar .icons {
