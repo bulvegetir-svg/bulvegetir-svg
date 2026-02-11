@@ -1,12 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}</title>
+  <meta name="description" content="Bulvegetir – Tek CSS ve tek JS ile SEO‑uyumlu, aktif e‑ticaret">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="Bulvegetir – Tek CSS ve tek JS ile SEO‑uyumlu, aktif e‑ticaret">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bulvegetir-svg.vercel.app">
+  <meta property="og:image" content="/assets/logo.svg">
+  <link rel="stylesheet" href="/style.min.css">
 </head>
-<body>
-  {% include "header.njk" %}
-  {% block content %}{% endblock %}
-  {% include "footer.njk" %}
+
+<body class="site-body">
+  <!-- Header -->
+  <header class="head-bar">
+    <div class="logo">
+      <a href="/">
+        <img src="/assets/logo.svg" alt="BulGetir Logo" height="40" />
+      </a>
+    </div>
+    <!-- Hamburger butonu -->
+    <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
+    <nav class="menu">
+      <ul>
+        <li><a href="/" class="nav-link">Ana Sayfa</a></li>
+        <li><a href="/products/" class="nav-link">Ürünler</a></li>
+        <li><a href="/support/" class="nav-link">Destek</a></li>
+        <li><a href="/cart/" class="nav-link">Sepet</a></li>
+        <li><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <a href="/signin" class="icon-link" aria-label="Giriş">👤</a>
+      <a href="/cart" class="icon-link" aria-label="Sepetim">🛒</a>
+    </div>
+  </header>
+
+  <!-- Ana içerik -->
+  <main class="site-main">
+    {{ content | safe }}
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <img src="/assets/logo.svg" alt="BulGetir Logo" height="30" />
+      <p>&copy; 2026 Bul Getir. Tüm hakları saklıdır.</p>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/support/">Destek</a></li>
+          <li><a href="/products/">Ürünler</a></li>
+          <li><a href="/thankyou/">Teşekkür</a></li>
+        </ul>
+      </nav>
+      <ul class="footer__social">
+        <li><a href="/signin" aria-label="Giriş">👤</a></li>
+        <li><a href="/cart" aria-label="Sepetim">🛒</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="/script.min.js" defer></script>
 </body>
 </html>
+---
+title: "Bulvegetir – Ana Sayfa"
+layout: layout                 # ← yeni layout dosyası
+---
+{% block content %}
+  <section class="home-section">
+    <h1>Bulvegetir’e Hoş Geldiniz</h1>
+
+    <p>
+      Bu, projede başlangıç için basit bir index sayfasıdır.
+      Buradan diğer sayfalara geçiş yapabilirsiniz.
+    </p>
+
+    <div class="home-links">
+      <a href="/cart/" class="button primary">Sepet</a>
+      <a href="/test/" class="button secondary">Test Sayfası</a>
+      <a href="/thankyou/" class="button tertiary">Teşekkür</a>
+    </div>
+  </section>
+{% endblock %}

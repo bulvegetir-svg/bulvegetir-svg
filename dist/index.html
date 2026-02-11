@@ -15,67 +15,73 @@
 
   <body class="site-body">
     <header class="head-bar">
-      <div class="logo">
-        <a href="/">
-          <img src="/assets/logo.svg" alt="BulGetir Logo" height="40" />
-        </a>
-      </div>
-      <!-- Hamburger butonu -->
-      <button class="hamburger" aria-label="Menüyü Aç/Kapat">&#9776;</button>
-      <nav class="main-nav">
-        <ul class="nav-list">
-          <li class="nav-item"><a href="/" class="nav-link">Ana Sayfa</a></li>
-          <li class="nav-item"><a href="/products/" class="nav-link">Ürünler</a></li>
-          <li class="nav-item"><a href="/support/" class="nav-link">Destek</a></li>
-          <li class="nav-item"><a href="/cart/" class="nav-link">Sepet</a></li>
-          <li class="nav-item"><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
-        </ul>
-      </nav>
-      <div class="icons">
-        <a href="/signin" class="icon-link" aria-label="Giriş">
-          <span class="icon">👤</span>
-        </a>
-        <a href="/cart" class="icon-link" aria-label="Sepetim">
-          <span class="icon">🛒</span>
-        </a>
-      </div>
-    </header>
+  <div class="logo">
+    <a href="/">
+      <img src="/assets/logo.svg" alt="BulGetir Logo" height="40" />
+    </a>
+  </div>
+  <!-- Hamburger butonu -->
+  <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
+  <nav class="menu">
+    <ul>
+      <li class="nav-item"><a href="/" class="nav-link">Ana Sayfa</a></li>
+      <li class="nav-item"><a href="/products/" class="nav-link">Ürünler</a></li>
+      <li class="nav-item"><a href="/support/" class="nav-link">Destek</a></li>
+      <li class="nav-item"><a href="/cart/" class="nav-link">Sepet</a></li>
+      <li class="nav-item"><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
+    </ul>
+  </nav>
+  <div class="icons">
+    <a href="/signin" class="icon-link" aria-label="Giriş">
+      <span class="icon">👤</span>
+    </a>
+    <a href="/cart" class="icon-link" aria-label="Sepetim">
+      <span class="icon">🛒</span>
+    </a>
+  </div>
+</header>
+
 
     <main class="site-main">
-      <section class="home-section">
-        <h1>Bulvegetir’e Hoş Geldiniz</h1>
-        <p>
-          Bu, projede başlangıç için basit bir index sayfasıdır.
-          Buradan diğer sayfalara geçiş yapabilirsiniz.
-        </p>
-        <div class="home-links">
-          <a href="/cart/" class="button primary">Sepet</a>
-          <a href="/test/" class="button secondary">Test Sayfası</a>
-          <a href="/thankyou/" class="button tertiary">Teşekkür</a>
-        </div>
-      </section>
+      
+  <section class="home-section">
+    <h1>Bulvegetir’e Hoş Geldiniz</h1>
+
+    <p>
+      Bu, projede başlangıç için basit bir index sayfasıdır.
+      Buradan diğer sayfalara geçiş yapabilirsiniz.
+    </p>
+
+    <div class="home-links">
+      <a href="/cart/" class="button primary">Sepet</a>
+      <a href="/test/" class="button secondary">Test Sayfası</a>
+      <a href="/thankyou/" class="button tertiary">Teşekkür</a>
+    </div>
+  </section>
+
+
     </main>
 
     <footer class="footer">
-      <div class="footer-content">
-        <img src="/assets/logo.svg" alt="BulGetir Logo" height="30" />
-        <p>&copy; 2026 Bul Getir. Tüm hakları saklıdır.</p>
-        <nav class="footer-nav">
-          <ul>
-            <li><a href="/support/">Destek</a></li>
-            <li><a href="/products/">Ürünler</a></li>
-            <li><a href="/thankyou/">Teşekkür</a></li>
-          </ul>
-        </nav>
-        <ul class="footer__social">
-          <li><a href="/signin" aria-label="Giriş">👤</a></li>
-          <li><a href="/cart" aria-label="Sepetim">🛒</a></li>
-        </ul>
-      </div>
-    </footer>
+  <div class="footer-content">
+    <img src="/assets/logo.svg" alt="BulGetir Logo" height="30" />
+    <p>&copy; 2026 Bul Getir. Tüm hakları saklıdır.</p>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="/support/">Destek</a></li>
+        <li><a href="/products/">Ürünler</a></li>
+        <li><a href="/thankyou/">Teşekkür</a></li>
+      </ul>
+    </nav>
+    <ul class="footer__social">
+      <li><a href="/signin" aria-label="Giriş">👤</a></li>
+      <li><a href="/cart" aria-label="Sepetim">🛒</a></li>
+    </ul>
+  </div>
+</footer>
 
-    <!-- Script en sona -->
+
+    <!-- Script en sona, root'tan çağır -->
     <script src="/script.min.js" defer></script>
-    <script type="module" src="/scripts/main.js"></script>
   </body>
 </html>
