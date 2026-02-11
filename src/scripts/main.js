@@ -6,6 +6,7 @@ import { lazyLoadImages, initNav, initRelatedProducts } from './utils.js';
 document.addEventListener('DOMContentLoaded', () => {
   // Genel UI
   initNav();
+  initMobileNav(); // Hamburger menü için eklendi
   lazyLoadImages();
 
   // Arama İşlevselliği
@@ -41,5 +42,17 @@ function performSearch() {
   if (query) {
     // Yönlendirme adresi düzeltildi: /cevap/
     window.location.href = `/cevap/?q=${encodeURIComponent(query)}`;
+  }
+}
+
+// Hamburger Menü Mantığı
+function initMobileNav() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+
+  if (menuToggle && menu) {
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
   }
 }
