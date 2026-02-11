@@ -24,7 +24,7 @@ body {
 }
 
 .head-bar .logo img {
-  max-height: 40px; /* Logo yüksekliği sınırlandı */
+  max-height: 40px;
   width: auto;
 }
 
@@ -32,7 +32,8 @@ body {
   flex: 1 1 auto;
 }
 
-.head-bar .nav-list {
+/* Menü Listesi (Sınıf ismi düzeltildi: .menu ul) */
+.menu ul {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -57,7 +58,7 @@ body {
   gap: 10px;
 }
 
-/* Hamburger - Varsayılan olarak gizli (Sınıf ismi düzeltildi: .menu-toggle) */
+/* Hamburger - Varsayılan olarak gizli */
 .menu-toggle {
   display: none;
   cursor: pointer;
@@ -103,30 +104,30 @@ body {
 /* Mobil görünüm */
 @media (max-width: 768px) {
   .head-bar {
-    flex-direction: column; /* Mobilde dikey hizalama */
+    flex-direction: column;
     align-items: flex-start;
   }
-  .head-bar .nav-list {
+  .menu { /* Sınıf ismi düzeltildi: .menu */
     display: none;
     flex-direction: column;
     gap: 10px;
     background: linear-gradient(90deg, #004d40, #00796b);
     position: absolute;
-    top: 100%; /* Logo yüksekliğine göre otomatik */
+    top: 100%;
     left: 0;
     right: 0;
     padding: 15px;
     z-index: 100;
   }
-  .head-bar .nav-list.active {
+  .menu.active { /* Sınıf ismi düzeltildi: .menu.active */
     display: flex;
   }
   .menu-toggle {
-    display: block; /* Mobilde göster (Sınıf ismi düzeltildi: .menu-toggle) */
-    align-self: flex-end; /* Hamburger sağa hizalanır */
+    display: block;
+    align-self: flex-end;
   }
   .head-bar .icons {
-    display: none; /* Mobilde ikonlar gizlendi */
+    display: none;
   }
 }
 /* Masaüstü Görünümü (Kesin gizleme) */
