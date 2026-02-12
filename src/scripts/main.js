@@ -51,8 +51,13 @@ function initMobileNav() {
 
   if (menuToggle && menu) {
     menuToggle.addEventListener('click', (e) => {
-      e.stopPropagation(); // Olayın yukarı taşınmasını engelle
-      menu.classList.toggle('active');
+      e.stopPropagation();
+      // active sınıfı varsa çıkar, yoksa ekle
+      if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+      } else {
+        menu.classList.add('active');
+      }
     });
 
     // Menü dışına tıklanınca kapat
