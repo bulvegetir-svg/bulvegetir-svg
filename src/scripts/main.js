@@ -31,8 +31,11 @@ async function initSearch() {
     if (!query) return;
 
     try {
-      // 1. JSON veri dosyasını çek
-      const response = await fetch('/data/productGroups.json');
+      // 1. JSON veri dosyasını çek - Yol kontrol edildi
+      const response = await fetch('/data/productGroups.json'); // Veya '/productGroups.json' deneyin
+      if (!response.ok) {
+        throw new Error('Veri çekilemedi: ' + response.status);
+      }
       const data = await response.json();
 
       // 2. Veri içinde ara
@@ -60,7 +63,7 @@ async function initSearch() {
       }
     } catch (error) {
       console.error('Arama hatası:', error);
-      alert('Arama yapılırken bir hata oluştu.');
+      alert('Arama yapılırken bir hata oluştu. Veri dosyasının konumu kontrol edilmeli.');
     }
   }
 
