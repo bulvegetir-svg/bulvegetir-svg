@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------
-   .eleventy.js – Eleventy konfigürasyonu
+   .eleventy.cjs – Eleventy konfigürasyonu (CommonJS)
 ------------------------------------------------------------- */
 module.exports = function (eleventyConfig) {
   // Statik varlıkları kopyala

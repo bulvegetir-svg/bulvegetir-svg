@@ -6,10 +6,10 @@
     "clean": "rimraf dist",
     "styles": "sass src/styles/style.scss dist/style.css --no-source-map && npx postcss dist/style.css -o dist/style.min.css",
     "scripts": "rollup -c",
-    "html": "eleventy --config=.eleventy.js",
+    "html": "eleventy --config=.eleventy.cjs",
     "copy-data": "npx cpx \"src/data/productGroups.json\" \"dist/data/\"",
     "build": "npm-run-all clean styles scripts html copy-data",
-    "start": "eleventy --serve --config=.eleventy.js",
+    "start": "eleventy --serve --config=.eleventy.cjs",
     "serve": "http-server dist -p 8080"
   },
   "devDependencies": {
