@@ -3,7 +3,7 @@ layout: base.njk
 title: "Bulvegetir – Ana Sayfa"
 ---
 
-<section class="hero">
+<section class="hero" style="background-image: url('/assets/hero.webp');">
   <div class="hero-content">
     <h1>Taze ve Organik Ürünler</h1>
     <p>BulGetir ile doğallık kapınızda.</p>
@@ -16,7 +16,7 @@ title: "Bulvegetir – Ana Sayfa"
   <div class="product-grid">
     {% for i in range(0, 8) %}
     <div class="product-card">
-      <img src="https://via.placeholder.com/250x250/00796b/ffffff?text=Urun+{{ i+1 }}" alt="Ürün {{ i+1 }}" width="250" height="250">
+      <img src="/assets/urun.webp" alt="Ürün {{ i+1 }}" width="250" height="250">
       <h3>Ürün Adı {{ i+1 }}</h3>
       <p>100 TL</p>
       <a href="/products/" class="button small">Detay</a>
