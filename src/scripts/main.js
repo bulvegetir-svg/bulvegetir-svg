@@ -1,9 +1,10 @@
 // src/scripts/main.js
+
+// Hamburger Menü İşlevi
 function initMobileNav() {
   const menuToggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.menu');
 
-  // Elementler DOM'da var mı?
   if (menuToggle && menu) {
     menuToggle.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -18,6 +19,61 @@ function initMobileNav() {
   }
 }
 
-// --- EKLENEN SATIR ---
-document.addEventListener('DOMContentLoaded', initMobileNav);
-// --------------------
+// Arama İşlevi (JSON yapısına göre güncellendi)
+async function initSearch() {
+  const searchInput = document.getElementById('search-input');
+  const searchButton = document.getElementById('search-button');
+
+  if (!searchInput || !searchButton) return;
+
+  async function performSearch() {
+    const query = searchInput.value.trim().toLowerCase();
+    if (!query) return;
+
+    try {
+      // 1. JSON veri dosyasını çek
+      const response = await fetch('/data/productGroups.json');
+      const data = await response.json();
+
+      // 2. Veri içinde ara
+      let firstResultUrl = null;
+      
+      for (const group of data) {
+        if (group.name.toLowerCase().includes(query)) {
+          firstResultUrl = `/group/${group.slug}/`;
+          break;
+        }
+        for (const product of group.products) {
+          if (product.name.toLowerCase().includes(query)) {
+            firstResultUrl = `/product/${product.slug}/`;
+            break;
+          }
+        }
+        if (firstResultUrl) break;
+      }
+
+      // 3. Sonuçları yönlendir
+      if (firstResultUrl) {
+        window.location.href = firstResultUrl;
+      } else {
+        alert('Ürün bulunamadı.');
+      }
+    } catch (error) {
+      console.error('Arama hatası:', error);
+      alert('Arama yapılırken bir hata oluştu.');
+    }
+  }
+
+  searchButton.addEventListener('click', performSearch);
+  searchInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      performSearch();
+    }
+  });
+}
+
+// Sayfa yüklendiğinde fonksiyonları başlat
+document.addEventListener('DOMContentLoaded', () => {
+  initMobileNav();
+  initSearch();
+});
