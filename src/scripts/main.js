@@ -30,44 +30,8 @@ async function initSearch() {
     const query = searchInput.value.trim().toLowerCase();
     if (!query) return;
 
-    try {
-      // 1. JSON veri dosyasını çek
-      // Veriler artık _data klasöründe, bu nedenle fetch doğrudan çalışmayabilir.
-      // E-ticaret sitelerinde arama için genelde bir "arama indeksi" dosyası kullanılır.
-      // Şimdilik hata yönetimi ekliyoruz.
-      const response = await fetch('/data/productGroups.json'); 
-      if (!response.ok) {
-        throw new Error('Veri dosyası bulunamadı (404)');
-      }
-      const data = await response.json();
-
-      // 2. Veri içinde ara
-      let firstResultUrl = null;
-      
-      for (const group of data) {
-        if (group.name.toLowerCase().includes(query)) {
-          firstResultUrl = `/group/${group.slug}/`;
-          break;
-        }
-        for (const product of group.products) {
-          if (product.name.toLowerCase().includes(query)) {
-            firstResultUrl = `/product/${product.slug}/`;
-            break;
-          }
-        }
-        if (firstResultUrl) break;
-      }
-
-      // 3. Sonuçları yönlendir
-      if (firstResultUrl) {
-        window.location.href = firstResultUrl;
-      } else {
-        alert('Ürün bulunamadı.');
-      }
-    } catch (error) {
-      console.error('Arama hatası:', error);
-      alert('Arama yapılırken bir hata oluştu. Veri dosyasının konumu kontrol edilmeli.');
-    }
+    // Yönlendirme mantığı: Her zaman arama sayfasına git
+    window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
   }
 
   searchButton.addEventListener('click', performSearch);
@@ -78,8 +42,52 @@ async function initSearch() {
   });
 }
 
+// Arama Sonuçlarını Görüntüleme İşlevi (SEARCH.JS'DEN TAŞINDI)
+async function initSearchResults() {
+  const resultsContainer = document.getElementById('results-list');
+  const searchTermSpan = document.getElementById('search-term');
+
+  if (!resultsContainer) return;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('q');
+
+  if (query) {
+    searchTermSpan.textContent = query;
+    try {
+      const response = await fetch('/data/productGroups.json');
+      const data = await response.json();
+      
+      let results = [];
+      for (const group of data) {
+        if (group.name.toLowerCase().includes(query.toLowerCase())) {
+          results.push({ name: group.name, url: `/group/${group.slug}/` });
+        }
+        for (const product of group.products) {
+          if (product.name.toLowerCase().includes(query.toLowerCase())) {
+            results.push({ name: product.name, url: `/product/${product.slug}/` });
+          }
+        }
+      }
+
+      if (results.length > 0) {
+        resultsContainer.innerHTML = results.map(r => `
+          <div class="product-item">
+            <a href="${r.url}">${r.name}</a>
+          </div>
+        `).join('');
+      } else {
+        resultsContainer.innerHTML = '<p>Sonuç bulunamadı.</p>';
+      }
+    } catch (error) {
+      resultsContainer.innerHTML = '<p>Arama sırasında bir hata oluştu.</p>';
+    }
+  }
+}
+
 // Sayfa yüklendiğinde fonksiyonları başlat
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initSearch();
+  initSearchResults(); // Arama sonuçları sayfasında çalışacak
 });

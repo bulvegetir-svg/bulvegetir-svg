@@ -1,0 +1,49 @@
+---
+layout: layout.njk
+title: Arama Sonuçları
+permalink: /search.html
+---
+
+<div class="search-results-container">
+    <h1>Arama Sonuçları</h1>
+    <p>Arama terimi: <span id="search-term"></span></p>
+
+    <div id="results-list" class="product-grid">
+        <p>Sonuç yükleniyor...</p>
+    </div>
+</div>
+
+<style>
+    .search-results-container {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .product-item {
+        border: 1px solid #eee;
+        padding: 15px;
+        text-align: center;
+        border-radius: 8px;
+        transition: box-shadow 0.3s;
+    }
+    .product-item:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .product-item img {
+        max-width: 100%;
+        height: 150px;
+        object-fit: contain;
+    }
+    .product-item a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+</style>
+
