@@ -93,7 +93,7 @@ body {
 
 /* Hero Bölümü */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/hero.jpg") center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/hero.webp") center/cover;
   color: white;
   padding: 100px 20px;
   text-align: center;
@@ -205,8 +205,9 @@ body {
     padding: 15px;
     z-index: 1000;
   }
+  /* JavaScript ile eklenen sınıf */
   .menu.active {
-    display: flex !important; /* Force display */
+    display: flex !important;
   }
   .menu ul {
     flex-direction: column;
