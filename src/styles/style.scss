@@ -175,7 +175,7 @@ body {
   text-decoration: none;
 }
 
-/* Mobil görünüm - Konumlandırma Düzeltildi */
+/* Mobil görünüm */
 @media (max-width: 768px) {
   .head-bar {
     flex-wrap: wrap;
@@ -194,7 +194,7 @@ body {
   .menu-toggle {
     display: block;
     order: 3;
-    margin-left: auto; /* Sağ tarafa sabitle */
+    margin-left: auto;
   }
   
   .search-container {
@@ -209,14 +209,14 @@ body {
     width: 100%;
     background: #004d40;
     position: absolute;
-    top: 60px; /* Header yüksekliğine göre ayarla */
+    top: 60px;
     left: 0;
     padding: 15px;
     z-index: 1000;
   }
 
   .menu.active {         
-    display: flex;
+    display: flex !important; /* Force display */
   }
 
   .menu ul {
