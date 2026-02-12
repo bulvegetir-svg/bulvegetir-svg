@@ -88,7 +88,7 @@ body {
   color: #fff;
   background: none;
   border: none;
-  z-index: 1001; /* Ön planda olması için */
+  z-index: 1001;
 }
 
 /* Hero Bölümü */
@@ -171,13 +171,26 @@ body {
   text-decoration: none;
 }
 
-/* Mobil görünüm */
+/* Mobil görünüm - Konumlandırma Düzeltildi */
 @media (max-width: 768px) {
   .head-bar {
     flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .logo {
+    order: 1;
+  }
+  .icons {
+    order: 2;
+  }
+  .menu-toggle {
+    display: block;
+    order: 3;
+    margin-left: auto; /* Sağ tarafa sabitle */
   }
   .search-container {
-    order: 3;
+    order: 4;
     width: 100%;
     margin: 10px 0;
   }
@@ -187,7 +200,7 @@ body {
     width: 100%;
     background: #004d40;
     position: absolute;
-    top: 60px;
+    top: 60px; /* Header yüksekliğine göre ayarla */
     left: 0;
     padding: 15px;
     z-index: 1000;
@@ -199,16 +212,10 @@ body {
     flex-direction: column;
     gap: 10px;
   }
-  .menu-toggle {
-    display: block;
-  }
-  .icons {
-    order: 2;
-  }
   .product-grid-section .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* Mobilde 2 sütun */
+    grid-template-columns: repeat(2, 1fr);
   }
   .blog-section .blog-grid {
-    grid-template-columns: 1fr; /* Mobilde 1 sütun */
+    grid-template-columns: 1fr;
   }
 }
