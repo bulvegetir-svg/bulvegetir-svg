@@ -1,11 +1,18 @@
 ---
 title: "İletişim"
-pageClass: "contact-page"
-layout: layout
-permalink: "/contact/"       # ← /contact/ yoluna çıktı
+layout: base.njk
+permalink: "/contact/"
 ---
-{% block content %}
-  <section class="contact-section">
+
+<section class="hero secondary-hero">
+  <div class="hero-content">
+    <h1>İletişim</h1>
+    <p>Bize Ulaşın</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
     <h1>İletişim</h1>
     <p>
       Bize ulaşmak için aşağıdaki formu doldurabilirsiniz.
@@ -26,5 +33,5 @@ permalink: "/contact/"       # ← /contact/ yoluna çıktı
     </form>
 
     <a href="/" class="button secondary">Ana Sayfaya Dön</a>
-  </section>
-{% endblock %}
+  </div>
+</section>

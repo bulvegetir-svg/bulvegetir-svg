@@ -1,12 +1,21 @@
 ---
 title: "Sepet"
-pageClass: "cart-page"
-layout: layout
-permalink: "/cart/"           # ← /cart/ yoluna çıktı
+layout: base.njk
+permalink: "/cart/"
 ---
-{% block content %}
-  <h1>Sepet</h1>
-  <p>Bu sayfa statik bir örnek “sepet” sayfasıdır. İçerik kendiniz ekleyebilirsiniz.</p>
 
-  <a href="/" class="button primary">Ana Sayfaya Dön</a>
-{% endblock %}
+<section class="hero secondary-hero">
+  <div class="hero-content">
+    <h1>Sepetim</h1>
+    <p>Ürünleriniz</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <h1>Sepet</h1>
+    <p>Bu sayfa statik bir örnek “sepet” sayfasıdır. İçerik kendiniz ekleyebilirsiniz.</p>
+
+    <a href="/" class="button primary">Ana Sayfaya Dön</a>
+  </div>
+</section>

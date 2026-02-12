@@ -1,11 +1,18 @@
 ---
 title: "Destek"
-pageClass: "support-page"
-layout: layout                 # src/_includes/layout.njk şablonunu kullanır
-permalink: "/support/"         # Çıktı yolu: dist/support/index.html
+layout: base.njk
+permalink: "/support/"
 ---
-{% block content %}
-  <section class="support-section">
+
+<section class="hero secondary-hero">
+  <div class="hero-content">
+    <h1>Destek Merkezi</h1>
+    <p>Size Nasıl Yardımcı Olabiliriz?</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
     <h1>Destek Merkezi</h1>
 
     <h2>Sıkça Sorulan Sorular (SSS)</h2>
@@ -41,5 +48,5 @@ permalink: "/support/"         # Çıktı yolu: dist/support/index.html
 
       <button type="submit" class="button primary">Gönder</button>
     </form>
-  </section>
-{% endblock %}
+  </div>
+</section>

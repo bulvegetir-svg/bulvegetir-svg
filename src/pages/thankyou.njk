@@ -1,12 +1,21 @@
 ---
 title: "Teşekkür"
-pageClass: "thankyou-page"
-layout: layout                 # src/_includes/layout.njk dosyasını kullanır
-permalink: "/thankyou/"        # ← bu satır sayesinde dosya dist/thankyou/index.html olur
+layout: base.njk
+permalink: "/thankyou/"
 ---
-{% block content %}
-  <h1>Teşekkürler!</h1>
-  <p>Ödeme işleminiz başarıyla tamamlandı. Size bir onay e‑postası gönderildi.</p>
 
-  <a href="/" class="button primary">Ana Sayfaya Dön</a>
-{% endblock %}
+<section class="hero secondary-hero">
+  <div class="hero-content">
+    <h1>Teşekkürler!</h1>
+    <p>İşleminiz Başarılı</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <h1>Teşekkürler!</h1>
+    <p>Ödeme işleminiz başarıyla tamamlandı. Size bir onay e‑postası gönderildi.</p>
+
+    <a href="/" class="button primary">Ana Sayfaya Dön</a>
+  </div>
+</section>

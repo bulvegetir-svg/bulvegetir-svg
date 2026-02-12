@@ -1,0 +1,26 @@
+---
+layout: base.njk
+pagination:
+  data: "collections.products"
+  size: 1
+  alias: product
+permalink: "/product/{{ product.slug }}/"
+eleventyComputed:
+  title: "{{ product.name }}"
+---
+<section class="hero secondary-hero">
+  <div class="hero-content">
+    <h1>{{ product.name }}</h1>
+    <p>Ürün Detayı</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <h1>{{ product.name }}</h1>
+
+    <p>Fiyat: <strong>{{ product.price | currency }}</strong> TL</p>
+
+    <a href="/products/" class="button secondary">Tüm Ürünler</a>
+  </div>
+</section>

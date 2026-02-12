@@ -1,23 +1,34 @@
 ---
 title: "Ürünler"
-layout: layout          # layout dosyanız `_includes/layout.njk` olduğu için sadece “layout” yeterli
-permalink: "/products/" # ← Eleventy bu dosyayı dist/products/index.html olarak oluşturur
+layout: base.njk
+permalink: "/products/"
 ---
 
-<h1>Ürünler</h1>
+<section class="hero secondary-hero">
+  <div class="hero-content">
+    <h1>Ürünlerimiz</h1>
+    <p>Taze ve Organik</p>
+  </div>
+</section>
 
-{% if collections.products and collections.products.length > 0 %}
-  <p>Toplam ürün: {{ collections.products.length }}</p>
+<section class="content-section">
+  <div class="container">
+    <h1>Ürünler</h1>
 
-  <ul>
-    {% for product in collections.products %}
-      <li>
-        <a href="/product/{{ product.slug }}/">
-          {{ product.name }} – {{ product.price | currency }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>Ürün bulunamadı.</p>
-{% endif %}
+    {% if collections.products and collections.products.length > 0 %}
+      <p>Toplam ürün: {{ collections.products.length }}</p>
+
+      <ul class="product-list">
+        {% for product in collections.products %}
+          <li>
+            <a href="/product/{{ product.slug }}/">
+              {{ product.name }} – {{ product.price | currency }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Ürün bulunamadı.</p>
+    {% endif %}
+  </div>
+</section>

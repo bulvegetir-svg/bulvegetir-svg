@@ -1,11 +1,18 @@
 ---
 title: "Hakkımızda"
-pageClass: "about-page"
-layout: layout                 # Eleventy, src/_includes/layout.njk dosyasını kullanır
-permalink: "/about/"          # ← Vercel’de /about/ yoluna çıktı verir
+layout: base.njk
+permalink: "/about/"
 ---
-{% block content %}
-  <section class="about-section">
+
+<section class="hero secondary-hero">
+  <div class="hero-content">
+    <h1>Hakkımızda</h1>
+    <p>BulGetir ile doğallık kapınızda.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
     <h1>Hakkımızda</h1>
     <p>
       Bulvegetir, 2009’dan beri Türkiye‑İzmir‑ bölgesinde
@@ -22,5 +29,5 @@ permalink: "/about/"          # ← Vercel’de /about/ yoluna çıktı verir
     </ul>
 
     <a href="/" class="button primary">Ana Sayfaya Dön</a>
-  </section>
-{% endblock %}
+  </div>
+</section>
