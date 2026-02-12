@@ -17,3 +17,7 @@ function initMobileNav() {
     });
   }
 }
+
+// --- EKLENEN SATIR ---
+document.addEventListener('DOMContentLoaded', initMobileNav);
+// --------------------
