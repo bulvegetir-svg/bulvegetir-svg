@@ -1,35 +1,35 @@
-// .eleventy.js
-import fs from "fs";
+/* -------------------------------------------------------------
+   .eleventy.js – Eleventy konfigürasyonu
+------------------------------------------------------------- */
+module.exports = function (eleventyConfig) {
+  // Statik varlıkları kopyala
+  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
-export default function (eleventyConfig) {
-  // Statik dosyalar ve XML dosyası
-  eleventyConfig.addPassthroughCopy({
-    "src/assets": "assets",
-    "src/search-data.xml": "search-data.xml" // Yeni eklenen satır
-  });
+  // JSON veri dosyasını kopyala (Arama için gerekli)
+  eleventyConfig.addPassthroughCopy({ "src/data/productGroups.json": "data/productGroups.json" });
 
-  // --- Ürün koleksiyonu ---
-  eleventyConfig.addCollection("products", () => {
-    const data = JSON.parse(fs.readFileSync("./src/_data/products.json", "utf-8"));
+  // Ürün koleksiyonu
+  eleventyConfig.addCollection('products', async () => {
+    const data = require('./src/data/products.json');
     return data.products;
   });
-  // ------------------------
 
   // TL fiyat filtresi
-  eleventyConfig.addFilter("currency", (num) => {
-    return new Intl.NumberFormat("tr-TR", {
-      style: "currency",
-      currency: "TRY",
+  eleventyConfig.addFilter('currency', (num) => {
+    return new Intl.NumberFormat('tr-TR', {
+      style: 'currency',
+      currency: 'TRY'
     }).format(num);
   });
 
+  // Eleventy klasör ayarları
   return {
     dir: {
-      input: "src",
-      includes: "_includes",
-      layouts: "_includes",
-      output: "dist",
+      input: 'src',
+      includes: '_includes',
+      layouts: '_includes',
+      output: 'dist'
     },
-    templateFormats: ["html", "njk", "md"],
+    templateFormats: ['html', 'njk', 'md']
   };
-}
+};
