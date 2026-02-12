@@ -1,0 +1,32 @@
+---
+layout: base.njk
+pagination:
+  data: "productGroups"
+  size: 1
+  alias: group
+permalink: "/group/{{ group.slug }}/"
+eleventyComputed:
+  title: "{{ group.name }} - Bulvegetir"
+---
+
+<section class="hero secondary-hero">
+  <div class="hero-content">
+    <h1>{{ group.name }}</h1>
+    <p>En taze {{ group.name | lower }}</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <h2>{{ group.name }} Ürünleri</h2>
+    <div class="product-grid">
+      {% for product in group.products %}
+      <div class="product-card">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.price | currency }} TL</p>
+        <a href="/product/{{ product.slug }}/" class="button small">Detay</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

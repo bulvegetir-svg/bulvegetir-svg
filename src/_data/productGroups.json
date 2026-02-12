@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Meyveler",
+    "slug": "meyveler",
+    "image": "/assets/meyve.webp",
+    "products": [
+      {
+        "id": 1,
+        "name": "Elma",
+        "price": 12.5,
+        "slug": "elma"
+      },
+      {
+        "id": 2,
+        "name": "Armut",
+        "price": 15.0,
+        "slug": "armut"
+      }
+    ]
+  },
+  {
+    "name": "Sebzeler",
+    "slug": "sebzeler",
+    "image": "/assets/sebze.webp",
+    "products": [
+      {
+        "id": 3,
+        "name": "Domates",
+        "price": 20.0,
+        "slug": "domates"
+      }
+    ]
+  }
+]

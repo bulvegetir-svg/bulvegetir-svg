@@ -12,14 +12,13 @@ title: "Bulvegetir – Ana Sayfa"
 </section>
 
 <section class="product-grid-section">
-  <h2>Öne Çıkan Ürünler</h2>
+  <h2>Ürün Grupları</h2>
   <div class="product-grid">
-    {% for i in range(0, 8) %}
+    {% for group in productGroups %}
     <div class="product-card">
-      <img src="/assets/urun.webp" alt="Ürün {{ i+1 }}" width="250" height="250">
-      <h3>Ürün Adı {{ i+1 }}</h3>
-      <p>100 TL</p>
-      <a href="/products/" class="button small">Detay</a>
+      <img src="{{ group.image }}" alt="{{ group.name }}" width="250" height="250">
+      <h3>{{ group.name }}</h3>
+      <a href="/group/{{ group.slug }}/" class="button small">Ürünleri Gör</a>
     </div>
     {% endfor %}
   </div>
