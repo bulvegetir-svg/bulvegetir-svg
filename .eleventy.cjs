@@ -2,20 +2,16 @@
    src/scripts/eleventy.js – Eleventy konfigürasyonu
 ------------------------------------------------------------- */
 module.exports = function (eleventyConfig) {
-  // 1. JSON veri dosyasını doğrudan dist/data klasörüne kopyala
-  eleventyConfig.addPassthroughCopy({ "src/data/productGroups.json": "data/productGroups.json" });
-
-  // 2. Resim dosyalarını kopyala
-  eleventyConfig.addPassthroughCopy("src/assets/**/*.webp");
-  eleventyConfig.addPassthroughCopy("src/assets/**/*.png");
-  eleventyConfig.addPassthroughCopy("src/assets/**/*.jpg");
-  eleventyConfig.addPassthroughCopy("src/assets/**/*.svg");
-  
-  // 3. assets klasörünün geri kalanını kopyala
+  // Statik varlıkları kopyala
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+
+  // JSON veri dosyasını kopyala (Arama için gerekli)
+  eleventyConfig.addPassthroughCopy({ "src/data/productGroups.json": "data/productGroups.json" });
 
   // Ürün koleksiyonu
   eleventyConfig.addCollection('products', async () => {
+    // NOT: require kullanımı veriyi build zamanında alır.
+    // Arama fonksiyonu fetch kullandığı için dosyayı dist'te görmelidir.
     const data = require('./src/data/products.json');
     return data.products;
   });
