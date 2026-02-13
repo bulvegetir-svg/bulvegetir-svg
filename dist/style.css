@@ -1,20 +1,50 @@
 @charset "UTF-8";
-/* src/styles/style.scss */
+/* src/styles/style.scss - Font Boyutu Güncellemesi (%30 küçültme) */
+/* ÖNEMLİ: index.njk (veya ana şablonunuz) <head> kısmına 
+   aşağıdaki satırı eklemeniz gerekir:
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+*/
 /* Genel ayarlar */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f7f6;
   color: #333;
+  line-height: 1.5; /* Satır yüksekliği biraz düşürüldü */
+  font-size: 14px; /* Temel font boyutu düşürüldü */
 }
 
+/* Başlıklar İçin Özel Font */
+h1, h2, h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-top: 0;
+  color: #004d40;
+}
+
+h1 {
+  font-size: 2.1em;
+} /* Eskisi 3em idi */
+h2 {
+  font-size: 1.4em;
+} /* Eskisi daha büyüktü */
+h3 {
+  font-size: 0.95em;
+} /* Eskisi 1.1em idi */
 /* --- KAPSAYICI (CONTAINER) KURALI --- */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
-  box-sizing: border-box; /* ÖNEMLİ: Padding'in genişliği bozmasını engeller */
+  box-sizing: border-box;
+  /* --- DÜZELTME: Eğer bu container bir navbar'ın içindeyse flex çalışsın --- */
+}
+.head-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0; /* İçteki container'ın padding'i sıfırlanabilir */
 }
 
 /* ------------------------------------ */
@@ -23,15 +53,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 8px 15px; /* Padding küçültüldü */
   background: linear-gradient(90deg, #004d40, #00796b);
   color: #fff;
   position: relative;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9em; /* Navbar fontu küçültüldü */
 }
 
 .head-bar .logo img {
-  max-height: 40px;
+  max-height: 35px; /* Logo küçültüldü */
   width: auto;
 }
 
@@ -40,25 +73,27 @@ body {
   display: flex;
   align-items: center;
   background: #fff;
-  border-radius: 20px;
-  padding: 5px 10px;
-  margin: 0 15px;
-  flex: 0 1 300px;
+  border-radius: 15px;
+  padding: 3px 8px; /* Padding küçültüldü */
+  margin: 0 10px;
+  flex: 0 1 250px; /* Arama kutusu küçültüldü */
 }
 
 #search-input {
   border: none;
   outline: none;
-  padding: 5px;
+  padding: 4px;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9em;
 }
 
 #search-button {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px; /* İkon küçültüldü */
   color: #004d40;
 }
 
@@ -67,7 +102,7 @@ body {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px; /* Boşluk küçültüldü */
   margin: 0;
   padding: 0;
 }
@@ -75,26 +110,26 @@ body {
 .head-bar .nav-link {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .head-bar .icons {
   display: flex;
-  gap: 10px;
+  gap: 8px; /* İkon boşluğu küçültüldü */
   align-items: center;
 }
 
 .icon-link {
   color: #fff;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px; /* İkon küçültüldü */
 }
 
 /* Hamburger - Varsayılan gizli */
 .menu-toggle {
   display: none;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 20px; /* İkon küçültüldü */
   color: #fff;
   background: none;
   border: none;
@@ -105,74 +140,117 @@ body {
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/hero.webp") center/cover;
   color: white;
-  padding: 100px 0; /* Padding güncellendi */
+  padding: 70px 0; /* Padding küçültüldü */
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  margin-top: 15px;
 }
 
 .hero-content h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
+  font-size: 2.1em; /* Güncellendi */
+  margin-bottom: 8px;
+  color: white;
 }
 
 .button {
   display: inline-block;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 8px 16px; /* Padding küçültüldü */
+  border-radius: 20px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9em; /* Font küçültüldü */
 }
 
 .button.primary {
   background-color: #00796b;
   color: white;
 }
+.button.primary:hover {
+  background-color: #004d40;
+}
 
 /* Ürün Grid Yapısı */
 .product-grid-section {
-  padding: 40px 0; /* Padding güncellendi */
+  padding: 30px 0; /* Padding küçültüldü */
+  max-width: 800px;
+  margin: 0 auto;
+}
+.product-grid-section h2 {
+  color: #004d40;
+  text-align: center;
+  margin-bottom: 20px;
 }
 .product-grid-section .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 15px; /* Gap küçültüldü */
 }
 .product-grid-section .product-card {
-  border: 1px solid #ddd;
-  padding: 10px;
+  border: none;
+  padding: 10px; /* Padding küçültüldü */
   text-align: center;
   background: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05); /* Gölge küçültüldü */
+  transition: transform 0.3s ease;
+}
+.product-grid-section .product-card:hover {
+  transform: translateY(-2px); /* Kalkma mesafesi küçültüldü */
 }
 .product-grid-section .product-card img {
-  max-width: 100%;
-  height: 250px;
-  width: 250px;
+  width: 90px; /* Resim küçültüldü */
+  height: 90px; /* Resim küçültüldü */
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+.product-grid-section .product-card h3 {
+  font-size: 0.85em; /* Font küçültüldü */
+  margin: 8px 0;
+  font-weight: 500;
 }
 
 /* Blog Bölümü */
 .blog-section {
-  padding: 40px 0; /* Padding güncellendi */
+  padding: 30px 0; /* Padding küçültüldü */
   background-color: #eee;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+.blog-section h2 {
+  color: #004d40;
+  text-align: center;
+  margin-bottom: 20px;
 }
 .blog-section .blog-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 15px; /* Gap küçültüldü */
+  padding: 0 10px;
 }
 
 /* Footer */
 .footer {
-  padding: 20px;
+  padding: 15px; /* Padding küçültüldü */
   background: linear-gradient(90deg, #004d40, #00796b);
   color: #fff;
   text-align: center;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.85em; /* Font küçültüldü */
 }
 
 .footer-nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
   padding: 0;
 }
 
@@ -186,7 +264,7 @@ body {
   .head-bar {
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px;
+    padding: 8px;
   }
   .logo {
     order: 1;
@@ -202,7 +280,7 @@ body {
   .search-container {
     order: 4;
     width: 100%;
-    margin: 10px 0;
+    margin: 8px 0;
   }
   .menu {
     display: none;
@@ -210,18 +288,17 @@ body {
     width: 100%;
     background: #004d40;
     position: absolute;
-    top: 60px;
+    top: 50px; /* Pozisyon güncellendi */
     left: 0;
-    padding: 15px;
+    padding: 10px;
     z-index: 1000;
   }
-  /* JavaScript ile eklenen sınıf */
   .menu.active {
     display: flex !important;
   }
   .menu ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
   .product-grid-section .product-grid {
     grid-template-columns: repeat(2, 1fr);

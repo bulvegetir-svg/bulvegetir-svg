@@ -5,39 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Elektrik ürünleri - Bulvegetir</title>
   <meta name="description" content="Bulvegetir – Tek CSS ve tek JS ile SEO‑uyumlu, aktif e‑ticaret">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="/style.min.css">
 </head>
 
 <body class="site-body">
   <header class="head-bar">
-    <div class="logo">
-      <a href="/">
-        <img src="/assets/logo.svg" alt="BulGetir Logo" height="40" />
-      </a>
-    </div>
-    
-    <div class="search-container">
-      <input type="text" id="search-input" placeholder="Ürün ara...">
-      <button id="search-button">🔍</button>
-    </div>
-    <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
-    <nav class="menu">
-      <ul>
-        <li><a href="/" class="nav-link">Ana Sayfa</a></li>
-        <li><a href="/products/" class="nav-link">Ürünler</a></li>
-        <li><a href="/support/" class="nav-link">Destek</a></li>
-        <li><a href="/cart/" class="nav-link">Sepet</a></li>
-        <li><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
-      </ul>
-    </nav>
-    <div class="icons">
-      <a href="/signin" class="icon-link" aria-label="Giriş">👤</a>
-      <a href="/cart" class="icon-link" aria-label="Sepetim">🛒</a>
+    <div class="container"> 
+      <div class="logo">
+        <a href="/">
+          <img src="/assets/logo.svg" alt="BulGetir Logo" height="40" />
+        </a>
+      </div>
+      
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Ürün ara...">
+        <button id="search-button">🔍</button>
+      </div>
+      <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
+      <nav class="menu">
+        <ul>
+          <li><a href="/" class="nav-link">Ana Sayfa</a></li>
+          <li><a href="/products/" class="nav-link">Ürünler</a></li>
+          <li><a href="/support/" class="nav-link">Destek</a></li>
+          <li><a href="/cart/" class="nav-link">Sepet</a></li>
+          <li><a href="/thankyou/" class="nav-link">Teşekkür</a></li>
+        </ul>
+      </nav>
+      <div class="icons">
+        <a href="/signin" class="icon-link" aria-label="Giriş">👤</a>
+        <a href="/cart" class="icon-link" aria-label="Sepetim">🛒</a>
+      </div>
     </div>
   </header>
 
   <main class="site-main">
-    
+    <div class="container"> 
 <section class="hero secondary-hero">
   <div class="hero-content">
     <h1>Elektrik ürünleri</h1>
@@ -53,23 +58,26 @@
     </div>
   </div>
 </section>
+    </div>
   </main>
 
   <footer class="footer">
-    <div class="footer-content">
-      <img src="/assets/logo.svg" alt="BulGetir Logo" height="30" />
-      <p>&copy; 2026 Bul Getir. Tüm hakları saklıdır.</p>
-      <nav class="footer-nav">
-        <ul>
-          <li><a href="/support/">Destek</a></li>
-          <li><a href="/products/">Ürünler</a></li>
-          <li><a href="/thankyou/">Teşekkür</a></li>
+    <div class="container">
+      <div class="footer-content">
+        <img src="/assets/logo.svg" alt="BulGetir Logo" height="30" />
+        <p>&copy; 2026 Bul Getir. Tüm hakları saklıdır.</p>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="/support/">Destek</a></li>
+            <li><a href="/products/">Ürünler</a></li>
+            <li><a href="/thankyou/">Teşekkür</a></li>
+          </ul>
+        </nav>
+        <ul class="footer__social">
+          <li><a href="/signin" aria-label="Giriş">👤</a></li>
+          <li><a href="/cart" aria-label="Sepetim">🛒</a></li>
         </ul>
-      </nav>
-      <ul class="footer__social">
-        <li><a href="/signin" aria-label="Giriş">👤</a></li>
-        <li><a href="/cart" aria-label="Sepetim">🛒</a></li>
-      </ul>
+      </div>
     </div>
   </footer>
 
