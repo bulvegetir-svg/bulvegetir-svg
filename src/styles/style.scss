@@ -1,43 +1,33 @@
-/* src/styles/style.scss - Font render iyileştirmesi */
+/* src/styles/style.scss - Ana Sayfa Düzen Düzeltmesi */
 
-body {
-  margin: 0;
-  /* DÜZELTME: Poppins yerine Inter kullanıldı, Roboto yedek kaldı */
-  font-family: 'Inter', sans-serif;
-  background-color: #f4f7f6;
-  color: #333;
-  line-height: 1.5;
-  font-size: 14px;
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/hero.webp') center/cover;
+  color: white;
+  padding: 50px 20px; /* Padding ayarlandı */
+  text-align: center;
+  max-width: 1200px; /* Container ile uyumlu hale getirildi */
+  margin: 15px auto;
+  border-radius: 8px;
+  box-sizing: border-box; /* Padding'in genişliğe dahil olması için */
+}
+
+.product-grid-section {
+  padding: 30px 0;
+  max-width: 1200px; /* Container ile uyumlu hale getirildi */
+  margin: 0 auto;
+  padding: 0 20px; /* Padding eklendi */
+  box-sizing: border-box;
   
-  /* İYİLEŞTİRME: Bulanıklığı azaltmak için font rendering ayarı */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  h2 {
+    color: #004d40;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .product-grid {
+    display: grid;
+    /* DÜZELTME: Daha esnek grid yapısı */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
 }
-
-h1, h2, h3 {
-  /* DÜZELTME: Başlıklar da Inter oldu */
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  margin-top: 0;
-  color: #004d40;
-}
-
-/* Navbar */
-.head-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 15px; 
-  background: linear-gradient(90deg, #004d40, #00796b);
-  color: #fff;
-  position: relative;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  /* DÜZELTME: Navbar fontu */
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95em; 
-  letter-spacing: 0.1px;
-  font-weight: 500;
-}
-
-/* ... geri kalan CSS aynı kalabilir ... */
