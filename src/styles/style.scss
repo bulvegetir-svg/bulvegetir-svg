@@ -14,7 +14,7 @@ body {
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
-  box-sizing: border-box; /* ÖNEMLİ: Padding'in genişliği bozmasını engeller */
+  box-sizing: border-box;
 }
 /* ------------------------------------ */
 
@@ -107,8 +107,8 @@ body {
   color: white;
   padding: 100px 0;
   text-align: center;
-  max-width: 800px;   /* Daraltma eklendi */
-  margin: 0 auto;     /* Ortalandı */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero-content h1 {
@@ -132,8 +132,8 @@ body {
 /* Ürün Grid Yapısı */
 .product-grid-section {
   padding: 40px 0;
-  max-width: 800px;   /* Daraltma eklendi */
-  margin: 0 auto;     /* Ortalandı */
+  max-width: 800px;
+  margin: 0 auto;
   
   .product-grid {
     display: grid;
@@ -148,10 +148,11 @@ body {
     background: white;
 
     img {
-      max-width: 100%;
-      height: 250px;
-      width: 250px;
+      width: 120px;
+      height: 120px;
       object-fit: cover;
+      display: block;
+      margin: 0 auto;
     }
   }
 }
@@ -160,8 +161,8 @@ body {
 .blog-section {
   padding: 40px 0;
   background-color: #eee;
-  max-width: 800px;   /* Daraltma eklendi */
-  margin: 0 auto;     /* Ortalandı */
+  max-width: 800px;
+  margin: 0 auto;
   
   .blog-grid {
     display: grid;
