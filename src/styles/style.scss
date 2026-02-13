@@ -105,8 +105,10 @@ body {
 .hero {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/hero.webp') center/cover;
   color: white;
-  padding: 100px 0; /* Padding güncellendi */
+  padding: 100px 0;
   text-align: center;
+  max-width: 800px;   /* Daraltma eklendi */
+  margin: 0 auto;     /* Ortalandı */
 }
 
 .hero-content h1 {
@@ -129,7 +131,9 @@ body {
 
 /* Ürün Grid Yapısı */
 .product-grid-section {
-  padding: 40px 0; /* Padding güncellendi */
+  padding: 40px 0;
+  max-width: 800px;   /* Daraltma eklendi */
+  margin: 0 auto;     /* Ortalandı */
   
   .product-grid {
     display: grid;
@@ -154,8 +158,10 @@ body {
 
 /* Blog Bölümü */
 .blog-section {
-  padding: 40px 0; /* Padding güncellendi */
+  padding: 40px 0;
   background-color: #eee;
+  max-width: 800px;   /* Daraltma eklendi */
+  margin: 0 auto;     /* Ortalandı */
   
   .blog-grid {
     display: grid;
@@ -225,7 +231,6 @@ body {
     z-index: 1000;
   }
 
-  /* JavaScript ile eklenen sınıf */
   .menu.active {         
     display: flex !important; 
   }
