@@ -60,7 +60,7 @@ Bu repo, **peoje.01** adlı “tek CSS + tek JS ile SEO‑uyumlu, aktif 
 - **SEO‑odaklı** → `meta`, `Open Graph`, `JSON‑LD` şemalar  
 - **Statik** → `dist/` klasörü tek HTML + tek CSS + tek JS içerir, herhangi bir sunucuya **GitHub Pages / Netlify / Vercel** üzerinden dağıtılabilir.
 
----
+----
 
 ## 🚀 Kurulum ve Kullanım
 
