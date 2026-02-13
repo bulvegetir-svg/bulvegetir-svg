@@ -1,11 +1,24 @@
-/* src/styles/style.scss */
+/* src/styles/style.scss - Font Güncellemesi */
+
+/* ÖNEMLİ: index.njk (veya ana şablonunuz) <head> kısmına 
+   aşağıdaki satırı eklemeniz gerekir:
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+*/
 
 /* Genel ayarlar */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern Font */
-  background-color: #f4f7f6; /* Soft arka plan */
+  font-family: 'Roboto', sans-serif; /* Gövde Fontu */
+  background-color: #f4f7f6;
   color: #333;
+  line-height: 1.6; /* Okunabilirlik için satır yüksekliği */
+}
+
+/* Başlıklar İçin Özel Font */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif; /* Başlık Fontu */
+  font-weight: 600;
+  margin-top: 0;
 }
 
 /* --- KAPSAYICI (CONTAINER) KURALI --- */
@@ -28,7 +41,8 @@ body {
   color: #fff;
   position: relative;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Hafif Gölge */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif; /* Navigasyon için Başlık Fontu */
 }
 
 .head-bar .logo img {
@@ -53,6 +67,7 @@ body {
   padding: 5px;
   width: 100%;
   border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
 }
 
 #search-button {
@@ -76,7 +91,7 @@ body {
 .head-bar .nav-link {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .head-bar .icons {
@@ -110,13 +125,14 @@ body {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  border-radius: 10px; /* Yumuşak Köşe */
+  border-radius: 10px;
   margin-top: 20px;
 }
 
 .hero-content h1 {
   font-size: 3em;
   margin-bottom: 10px;
+  color: white;
 }
 
 .button {
@@ -124,8 +140,9 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease; /* Yumuşak geçiş */
+  font-weight: 500;
+  transition: background 0.3s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 .button.primary {
@@ -133,7 +150,7 @@ body {
   color: white;
   
   &:hover {
-    background-color: #004d40; /* Hover efekti */
+    background-color: #004d40;
   }
 }
 
@@ -143,6 +160,11 @@ body {
   max-width: 800px;
   margin: 0 auto;
   
+  h2 {
+    color: #004d40;
+    text-align: center;
+  }
+  
   .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -150,16 +172,16 @@ body {
   }
 
   .product-card {
-    border: none; /* Kenarlığı kaldırdık */
+    border: none;
     padding: 15px;
     text-align: center;
     background: white;
-    border-radius: 10px; /* Yumuşak köşeler */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Gölge */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
 
     &:hover {
-      transform: translateY(-3px); /* Hafif kalkma */
+      transform: translateY(-3px);
     }
 
     img {
@@ -168,12 +190,13 @@ body {
       object-fit: cover;
       display: block;
       margin: 0 auto;
-      border-radius: 8px; /* Resim köşeleri */
+      border-radius: 8px;
     }
     
     h3 {
       font-size: 1.1em;
       margin: 10px 0;
+      font-weight: 500;
     }
   }
 }
@@ -184,13 +207,18 @@ body {
   background-color: #eee;
   max-width: 800px;
   margin: 0 auto;
-  border-radius: 10px; /* Yumuşak Köşe */
+  border-radius: 10px;
+  
+  h2 {
+    color: #004d40;
+    text-align: center;
+  }
   
   .blog-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    padding: 0 15px; /* İç boşluk */
+    padding: 0 15px;
   }
 }
 
@@ -201,6 +229,7 @@ body {
   color: #fff;
   text-align: center;
   margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .footer-nav ul {
