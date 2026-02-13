@@ -1,24 +1,11 @@
-/* src/styles/style.scss - Font Güncellemesi */
-
-/* ÖNEMLİ: index.njk (veya ana şablonunuz) <head> kısmına 
-   aşağıdaki satırı eklemeniz gerekir:
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-*/
+/* src/styles/style.scss */
 
 /* Genel ayarlar */
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif; /* Gövde Fontu */
-  background-color: #f4f7f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern Font */
+  background-color: #f4f7f6; /* Soft arka plan */
   color: #333;
-  line-height: 1.6; /* Okunabilirlik için satır yüksekliği */
-}
-
-/* Başlıklar İçin Özel Font */
-h1, h2, h3 {
-  font-family: 'Poppins', sans-serif; /* Başlık Fontu */
-  font-weight: 600;
-  margin-top: 0;
 }
 
 /* --- KAPSAYICI (CONTAINER) KURALI --- */
@@ -41,8 +28,7 @@ h1, h2, h3 {
   color: #fff;
   position: relative;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  font-family: 'Poppins', sans-serif; /* Navigasyon için Başlık Fontu */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Hafif Gölge */
 }
 
 .head-bar .logo img {
@@ -67,7 +53,6 @@ h1, h2, h3 {
   padding: 5px;
   width: 100%;
   border-radius: 20px;
-  font-family: 'Roboto', sans-serif;
 }
 
 #search-button {
@@ -91,7 +76,7 @@ h1, h2, h3 {
 .head-bar .nav-link {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .head-bar .icons {
@@ -125,14 +110,13 @@ h1, h2, h3 {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  border-radius: 10px;
+  border-radius: 10px; /* Yumuşak Köşe */
   margin-top: 20px;
 }
 
 .hero-content h1 {
   font-size: 3em;
   margin-bottom: 10px;
-  color: white;
 }
 
 .button {
@@ -140,9 +124,8 @@ h1, h2, h3 {
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s ease;
-  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  transition: background 0.3s ease; /* Yumuşak geçiş */
 }
 
 .button.primary {
@@ -150,7 +133,7 @@ h1, h2, h3 {
   color: white;
   
   &:hover {
-    background-color: #004d40;
+    background-color: #004d40; /* Hover efekti */
   }
 }
 
@@ -160,11 +143,6 @@ h1, h2, h3 {
   max-width: 800px;
   margin: 0 auto;
   
-  h2 {
-    color: #004d40;
-    text-align: center;
-  }
-  
   .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -172,16 +150,16 @@ h1, h2, h3 {
   }
 
   .product-card {
-    border: none;
+    border: none; /* Kenarlığı kaldırdık */
     padding: 15px;
     text-align: center;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-radius: 10px; /* Yumuşak köşeler */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Gölge */
     transition: transform 0.3s ease;
 
     &:hover {
-      transform: translateY(-3px);
+      transform: translateY(-3px); /* Hafif kalkma */
     }
 
     img {
@@ -190,13 +168,12 @@ h1, h2, h3 {
       object-fit: cover;
       display: block;
       margin: 0 auto;
-      border-radius: 8px;
+      border-radius: 8px; /* Resim köşeleri */
     }
     
     h3 {
       font-size: 1.1em;
       margin: 10px 0;
-      font-weight: 500;
     }
   }
 }
@@ -207,18 +184,13 @@ h1, h2, h3 {
   background-color: #eee;
   max-width: 800px;
   margin: 0 auto;
-  border-radius: 10px;
-  
-  h2 {
-    color: #004d40;
-    text-align: center;
-  }
+  border-radius: 10px; /* Yumuşak Köşe */
   
   .blog-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    padding: 0 15px;
+    padding: 0 15px; /* İç boşluk */
   }
 }
 
@@ -229,7 +201,6 @@ h1, h2, h3 {
   color: #fff;
   text-align: center;
   margin-top: 30px;
-  font-family: 'Roboto', sans-serif;
 }
 
 .footer-nav ul {
