@@ -1,27 +1,39 @@
 ---
 layout: base.njk
-title: Ana Sayfa
+title: "Bulvegetir – Ana Sayfa"
 ---
 
-<main class="site-main">
-  <div class="container">                
-    <section class="hero" style="background-image: url('/assets/hero.webp');">
-      <div class="hero-content">
-        <h1>Taze ve Organik Ürünler</h1>
-        <p>BulGetir ile doğallık kapınızda.</p>
-        <a href="/products/" class="button primary">Alışverişe Başla</a>
-      </div>
-    </section>
+<section class="hero" style="background-image: url('/assets/hero.webp');">
+  <div class="hero-content">
+    <h1>Taze ve Organik Ürünler</h1>
+    <p>BulGetir ile doğallık kapınızda.</p>
+    <a href="/products/" class="button primary">Alışverişe Başla</a>
+  </div>
+</section>
 
-    <section class="product-grid-section">
-      <h2>Ürün Grupları</h2>
-      <div class="product-grid">
-        </div>
-    </section>
+<section class="product-grid-section">
+  <h2>Ürün Grupları</h2>
+  <div class="product-grid">
+    {% for group in productGroups %}
+    <div class="product-card">
+      <img src="{{ group.image }}" alt="{{ group.name }}" width="250" height="250">
+      <h3>{{ group.name }}</h3>
+      <a href="/group/{{ group.slug }}/" class="button small">Ürünleri Gör</a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
 
-    <section class="blog-section">
-      <h2>Son Blog Yazıları</h2>
-      <div class="blog-grid">
-        </div>
-    </section>
-  </div> </main>
+<section class="blog-section">
+  <h2>Son Blog Yazıları</h2>
+  <div class="blog-grid">
+    <div class="blog-post">
+      <h3>Organik Beslenmenin Faydaları</h3>
+      <p>Organik gıdalar ile daha sağlıklı bir yaşam...</p>
+    </div>
+    <div class="blog-post">
+      <h3>Mevsiminde Beslenme İpuçları</h3>
+      <p>Hangi mevsimde ne yemeli?</p>
+    </div>
+  </div>
+</section>
