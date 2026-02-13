@@ -17,12 +17,12 @@
     {% include "header.njk" %}
 
     <main class="site-main">
-      {{ content | safe }}
+      <div class="container">                {{ content | safe }}
+      </div>
     </main>
 
     {% include "footer.njk" %}
 
     <script src="/script.min.js" defer></script>
-    <script src="/scripts/search.js" defer></script>
   </body>
 </html>

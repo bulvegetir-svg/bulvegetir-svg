@@ -8,6 +8,16 @@ body {
   color: #333;
 }
 
+/* --- KAPSAYICI (CONTAINER) KURALI --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box; /* ÖNEMLİ: Padding'in genişliği bozmasını engeller */
+}
+
+/* ------------------------------------ */
 /* Navbar */
 .head-bar {
   display: flex;
@@ -95,7 +105,7 @@ body {
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/hero.webp") center/cover;
   color: white;
-  padding: 100px 20px;
+  padding: 100px 0; /* Padding güncellendi */
   text-align: center;
 }
 
@@ -117,9 +127,9 @@ body {
   color: white;
 }
 
-/* Ürün Grid Yapısı (4x2) */
+/* Ürün Grid Yapısı */
 .product-grid-section {
-  padding: 40px 20px;
+  padding: 40px 0; /* Padding güncellendi */
 }
 .product-grid-section .product-grid {
   display: grid;
@@ -141,7 +151,7 @@ body {
 
 /* Blog Bölümü */
 .blog-section {
-  padding: 40px 20px;
+  padding: 40px 0; /* Padding güncellendi */
   background-color: #eee;
 }
 .blog-section .blog-grid {
