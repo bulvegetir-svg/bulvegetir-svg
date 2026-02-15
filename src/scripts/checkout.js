@@ -1,4 +1,4 @@
-/* scripts/checkout.js – 0.1.1 – 2026-02-04 */
+/* scripts/checkout.js – 0.1.2 – 2026-02-15 */
 
 const stripePublicKey = 'pk_test_XXXXXXXXXXXXXXXXXXXXXXXX';
 
@@ -30,8 +30,8 @@ module.exports = {
       stripe.redirectToCheckout({
         lineItems: [{ price: product.stripePriceId, quantity: 1 }],
         mode: 'payment',
-        successUrl: `${location.origin}/thankyou.html?session_id={CHECKOUT_SESSION_ID}`,
-        cancelUrl: `${location.origin}/product-${product.slug}.html`
+        successUrl: `${location.origin}/thankyou/?session_id={CHECKOUT_SESSION_ID}`,
+        cancelUrl: `${location.origin}/product-${product.slug}/`
       })
       .then(res => {
         if (res && res.error) alert(res.error.message);

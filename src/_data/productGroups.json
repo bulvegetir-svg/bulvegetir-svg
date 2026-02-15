@@ -3,48 +3,146 @@
     "name": "Elektrik ürünleri",
     "slug": "elektrik-urunleri",
     "image": "/assets/elektrik.webp",
+    "subGroups": [
+      "Aydınlatma ürünleri",
+      "Motorlar",
+      "Batarya ve piller",
+      "Sigortalar",
+      "Power supply, driver ve trafolar",
+      "Kontaktör ve röleler",
+      "Bağlantı elemanları",
+      "Yol vericiler",
+      "Elektronik ürünleri"
+    ],
     "products": []
   },
   {
     "name": "Elektronik ürünleri",
     "slug": "elektronik-urunleri",
     "image": "/assets/elektronik.webp",
+    "subGroups": [
+      "Elektronik devre elemanları",
+      "Mini PC & Raspberry Pi",
+      "Akü ve pil şarj modülleri",
+      "Network ürünleri",
+      "Kumanda, kontrol kartları",
+      "CPU & İşlemci ürünleri",
+      "Sensörler",
+      "Sürücüler"
+    ],
     "products": []
   },
   {
     "name": "Makine ürünleri",
     "slug": "makine-urunleri",
     "image": "/assets/makine.webp",
+    "subGroups": [
+      "NC makineler",
+      "CNC makineler",
+      "Manuel mekanik makineler",
+      "El aparatları",
+      "Makine aksamları",
+      "Makine elemanları",
+      "Form makineleri",
+      "Presler"
+    ],
     "products": []
   },
   {
     "name": "Yapı elemanları ürünleri",
     "slug": "yapi-elemanlari-urunleri",
     "image": "/assets/yapi.webp",
+    "subGroups": [
+      "Dekorasyon ürünleri",
+      "İç mimari ürünleri",
+      "Dış mimari ürünleri",
+      "Peyzaj ürünleri",
+      "Yapı imalat ürünleri",
+      "Yapı imalat takımları",
+      "Yapı imalat makineleri",
+      "Yapı imalat hammaddeleri"
+    ],
     "products": []
   },
   {
     "name": "Gıda ürünleri",
     "slug": "gida-urunleri",
     "image": "/assets/gida.webp",
-    "products": []
+    "subGroups": [
+      "Dondurulmuş gıdalar",
+      "Kurutulmuş gıdalar",
+      "Kuru bakliyat",
+      "Hayvansal ürünler",
+      "Hazır gıdalar",
+      "Mineral gıdalar",
+      "Sıvı gıdalar",
+      "Aktar ürünleri"
+    ],
+    "products": [
+      {
+        "id": 1,
+        "name": "Elma",
+        "price": 12.5,
+        "slug": "elma",
+        "subCategory": "Meyve",
+        "image": "/assets/elma.webp"
+      },
+      {
+        "id": 2,
+        "name": "Armut",
+        "price": 15.0,
+        "slug": "armut",
+        "subCategory": "Meyve",
+        "image": "/assets/armut.webp"
+      }
+    ]
   },
   {
     "name": "Konfeksiyon ürünleri",
     "slug": "konfeksiyon-urunleri",
     "image": "/assets/konfeksiyon.webp",
+    "subGroups": [
+      "Bay Bayan Tişört",
+      "Bay Bayan Pantolon",
+      "Bay Bayan Ceket",
+      "Bay Bayan Eşofman",
+      "Bay Bayan Takım / Elbise",
+      "Bay Bayan Kazak",
+      "Bay Bayan Ayakkabı",
+      "Bay Bayan Çanta"
+    ],
     "products": []
   },
   {
     "name": "Hammadde ürünleri",
     "slug": "hammadde-urunleri",
     "image": "/assets/hammadde.webp",
+    "subGroups": [
+      "Bakır tel ve türevleri",
+      "Demir tel ve türevleri",
+      "Çelik tel ve türevleri",
+      "Bakır levha ve türevleri",
+      "Demir levha ve türevleri",
+      "Çelik levha ve türevleri",
+      "Saç levha türevleri",
+      "Özel metal hammaddeler"
+    ],
     "products": []
   },
   {
     "name": "Yarı mamül ürünleri",
     "slug": "yari-mamul-urunleri",
     "image": "/assets/yari-mamul.webp",
+    "subGroups": [
+      "Makine elemanları yedek parça",
+      "Yapı elemanları yedek parça",
+      "El imalat elemanları yedek parça",
+      "Savunma sanayi elemanları yedek parça",
+      "Endüstriyel imalat yedek parçaları",
+      "Otomotiv sanayi yedek parça",
+      "Enerji üretim elemanları yedek parça",
+      "Gıda sanayi imalat yedek parça"
+    ],
     "products": []
   }
 ]

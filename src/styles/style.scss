@@ -2,30 +2,30 @@
 
 /* ÖNEMLİ: index.njk (veya ana şablonunuz) <head> kısmına 
    aşağıdaki satırı eklemeniz gerekir:
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 */
 
 /* Genel ayarlar */
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif; /* Tutarlılık için Inter fontu seçildi */
   background-color: #f4f7f6;
   color: #333;
-  line-height: 1.5; /* Satır yüksekliği biraz düşürüldü */
+  line-height: 1.5;
   font-size: 14px; /* Temel font boyutu düşürüldü */
 }
 
 /* Başlıklar İçin Özel Font */
 h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif; /* Poppins yerine Inter ile uyum sağlandı */
   font-weight: 600;
   margin-top: 0;
   color: #004d40;
 }
 
-h1 { font-size: 2.1em; } /* Eskisi 3em idi */
-h2 { font-size: 1.4em; } /* Eskisi daha büyüktü */
-h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
+h1 { font-size: 2.1em; }
+h2 { font-size: 1.4em; }
+h3 { font-size: 0.95em; }
 
 /* --- KAPSAYICI (CONTAINER) KURALI --- */
 .container {
@@ -35,33 +35,31 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
   width: 100%;
   box-sizing: border-box;
   
-  /* --- DÜZELTME: Eğer bu container bir navbar'ın içindeyse flex çalışsın --- */
   .head-bar & {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0; /* İçteki container'ın padding'i sıfırlanabilir */
+    padding: 0;
   }
 }
-/* ------------------------------------ */
 
 /* Navbar */
 .head-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 15px; /* Padding küçültüldü */
+  padding: 8px 15px;
   background: linear-gradient(90deg, #004d40, #00796b);
   color: #fff;
   position: relative;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9em; /* Navbar fontu küçültüldü */
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9em;
 }
 
 .head-bar .logo img {
-  max-height: 35px; /* Logo küçültüldü */
+  max-height: 35px;
   width: auto;
 }
 
@@ -71,9 +69,9 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
   align-items: center;
   background: #fff;
   border-radius: 15px;
-  padding: 3px 8px; /* Padding küçültüldü */
+  padding: 3px 8px;
   margin: 0 10px;
-  flex: 0 1 250px; /* Arama kutusu küçültüldü */
+  flex: 0 1 250px;
 }
 
 #search-input {
@@ -82,7 +80,7 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
   padding: 4px;
   width: 100%;
   border-radius: 15px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9em;
 }
 
@@ -90,7 +88,7 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 14px; /* İkon küçültüldü */
+  font-size: 14px;
   color: #004d40;
 }
 
@@ -99,7 +97,7 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 15px; /* Boşluk küçültüldü */
+  gap: 15px;
   margin: 0;
   padding: 0;
 }
@@ -112,21 +110,21 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
 
 .head-bar .icons {
   display: flex;
-  gap: 8px; /* İkon boşluğu küçültüldü */
+  gap: 8px;
   align-items: center;
 }
 
 .icon-link {
   color: #fff;
   text-decoration: none;
-  font-size: 16px; /* İkon küçültüldü */
+  font-size: 16px;
 }
 
-/* Hamburger - Varsayılan gizli */
+/* Hamburger */
 .menu-toggle {
   display: none;
   cursor: pointer;
-  font-size: 20px; /* İkon küçültüldü */
+  font-size: 20px;
   color: #fff;
   background: none;
   border: none;
@@ -137,7 +135,7 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/hero.webp') center/cover;
   color: white;
-  padding: 70px 0; /* Padding küçültüldü */
+  padding: 70px 0;
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
@@ -146,21 +144,21 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
 }
 
 .hero-content h1 {
-  font-size: 2.1em; /* Güncellendi */
+  font-size: 2.1em;
   margin-bottom: 8px;
   color: white;
 }
 
 .button {
   display: inline-block;
-  padding: 8px 16px; /* Padding küçültüldü */
+  padding: 8px 16px;
   border-radius: 20px;
   text-decoration: none;
   font-weight: 500;
   transition: background 0.3s ease;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9em; /* Font küçültüldü */
-}
+  font-family: 'Inter', sans-serif; /* ← noktalı virgül eklendi */
+  font-size: 0.9em;
+} /* ← kapatma süslü parantez eklendi */
 
 .button.primary {
   background-color: #00796b;
@@ -173,7 +171,7 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
 
 /* Ürün Grid Yapısı */
 .product-grid-section {
-  padding: 30px 0; /* Padding küçültüldü */
+  padding: 30px 0;
   max-width: 800px;
   margin: 0 auto;
   
@@ -186,25 +184,25 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
   .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px; /* Gap küçültüldü */
+    gap: 15px;
   }
 
   .product-card {
     border: none;
-    padding: 10px; /* Padding küçültüldü */
+    padding: 10px;
     text-align: center;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.05); /* Gölge küçültüldü */
+    box-shadow: 0 3px 5px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
 
     &:hover {
-      transform: translateY(-2px); /* Kalkma mesafesi küçültüldü */
+      transform: translateY(-2px);
     }
 
     img {
-      width: 90px; /* Resim küçültüldü */
-      height: 90px; /* Resim küçültüldü */
+      width: 90px;
+      height: 90px;
       object-fit: cover;
       display: block;
       margin: 0 auto;
@@ -212,7 +210,7 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
     }
     
     h3 {
-      font-size: 0.85em; /* Font küçültüldü */
+      font-size: 0.85em;
       margin: 8px 0;
       font-weight: 500;
     }
@@ -221,7 +219,7 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
 
 /* Blog Bölümü */
 .blog-section {
-  padding: 30px 0; /* Padding küçültüldü */
+  padding: 30px 0;
   background-color: #eee;
   max-width: 800px;
   margin: 0 auto;
@@ -236,20 +234,20 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
   .blog-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px; /* Gap küçültüldü */
+    gap: 15px;
     padding: 0 10px;
   }
 }
 
 /* Footer */
 .footer {
-  padding: 15px; /* Padding küçültüldü */
+  padding: 15px;
   background: linear-gradient(90deg, #004d40, #00796b);
   color: #fff;
   text-align: center;
   margin-top: 20px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.85em; /* Font küçültüldü */
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85em;
 }
 
 .footer-nav ul {
@@ -273,25 +271,10 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
     padding: 8px;
   }
   
-  .logo {
-    order: 1;
-  }
-
-  .icons {
-    order: 2;
-  }
-
-  .menu-toggle {
-    display: block;
-    order: 3;
-    margin-left: auto;
-  }
-  
-  .search-container {
-    order: 4;
-    width: 100%;
-    margin: 8px 0;
-  }
+  .logo { order: 1; }
+  .icons { order: 2; }
+  .menu-toggle { display: block; order: 3; margin-left: auto; }
+  .search-container { order: 4; width: 100%; margin: 8px 0; }
 
   .menu {          
     display: none;
@@ -299,26 +282,16 @@ h3 { font-size: 0.95em; } /* Eskisi 1.1em idi */
     width: 100%;
     background: #004d40;
     position: absolute;
-    top: 50px; /* Pozisyon güncellendi */
+    top: 50px;
     left: 0;
     padding: 10px;
     z-index: 1000;
   }
 
-  .menu.active {          
-    display: flex !important; 
-  }
+  .menu.active { display: flex !important; }
 
-  .menu ul {
-    flex-direction: column;
-    gap: 8px;
-  }
+  .menu ul { flex-direction: column; gap: 8px; }
 
-  .product-grid-section .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .blog-section .blog-grid {
-    grid-template-columns: 1fr;
-  }
+  .product-grid-section .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-section .blog-grid { grid-template-columns: 1fr; }
 }
